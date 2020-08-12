@@ -411,7 +411,7 @@ func main() {
 			log.Fatal("[ZLOG] [ERROR] Creating The Server Failed : ", err)
 		}
 	}
-	// test
+	// test2
 	ip, _ := getClientIP()
 	log.Println("[ZLOG] [INFO] Starting server at", ip+":"+strconv.Itoa(zport))
 
