@@ -300,7 +300,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93ebd2de50e48bb47bf97386b2eb19a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_DefaultVirtualDisplayer: {fileID: 0}
+  m_DefaultVirtualDisplayer: {fileID: 1406232319260624, guid: e0f440c4bb94be641af5dc113d3248f5,
+    type: 2}
 --- !u!114 &114378715144848742
 MonoBehaviour:
   m_ObjectHideFlags: 1

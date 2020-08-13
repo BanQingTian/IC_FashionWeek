@@ -8,8 +8,8 @@ Material:
   m_PrefabInternal: {fileID: 0}
   m_Name: slice_staticModel_body
   m_Shader: {fileID: 4800000, guid: dab261defac21894c88cc90ad515f5ac, type: 3}
-  m_ShaderKeywords: _SPECGLOSSMAP
-  m_LightmapFlags: 4
+  m_ShaderKeywords: _EMISSION _SPECGLOSSMAP
+  m_LightmapFlags: 1
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
@@ -35,7 +35,11 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _EmissionMap:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 1071bfab88d05cd469fbcd189b316124, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _EmissionTex:
+        m_Texture: {fileID: 2800000, guid: 1071bfab88d05cd469fbcd189b316124, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
@@ -85,6 +89,7 @@ Material:
     - _NormalIntensity: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.02
+    - _Shininess: 0.7
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
@@ -94,5 +99,6 @@ Material:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _Color2: {r: 0.3773585, g: 0.3773585, b: 0.3773585, a: 1}
     - _EffectorColor: {r: 0, g: 0, b: 0, a: 1}
-    - _EmissionColor: {r: 0, g: 0, b: 0, a: 0}
+    - _Emission: {r: 0, g: 0, b: 0, a: 0}
+    - _EmissionColor: {r: 0, g: 0.26307595, b: 1.1320755, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}

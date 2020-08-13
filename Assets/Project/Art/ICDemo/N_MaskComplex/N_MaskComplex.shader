@@ -6,7 +6,7 @@
 		Lighting Off
 		//Cull Off
 		ZWrite On
-		ZTest Always
+		//ZTest Always
 		Pass
 		{
 			Color(0,0,0,0)

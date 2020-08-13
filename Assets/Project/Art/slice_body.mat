@@ -18,6 +18,10 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
+    - _EmissionTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _MainTex:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -39,7 +43,7 @@ Material:
     - _Glossiness2: 0.569
     - _Metallic: 1
     - _Metallic2: 0.751
-    - _NormalIntensity: 0.76
+    - _NormalIntensity: 0.4
     m_Colors:
     - _Color: {r: 0.8, g: 0.8, b: 0.8, a: 1}
     - _Color2: {r: 0.13461196, g: 0.42698058, b: 0.5188679, a: 1}

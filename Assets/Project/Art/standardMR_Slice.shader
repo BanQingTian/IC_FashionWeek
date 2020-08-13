@@ -11,6 +11,7 @@
 		_NormalTex("Normal Map", 2D) = "bump" {}
 		_NormalIntensity("Normal Map Intensity", Range(0,2)) = 1
 
+		_EmissionTex("EmissionTex", 2D) = "white" {}
 		[HDR] _EmissionColor("Emission", Color) = (0, 0, 0)
 
 		[Header(Backface Attributes)]
@@ -55,6 +56,7 @@
 		fixed4 _Color;
 
 		half3 _EmissionColor;
+		sampler2D _EmissionTex;
 
 		half4 _Color2;
 		half _Metallic2;
@@ -141,6 +143,8 @@
 			half4 c = tex2D(_MainTex, IN.uv_MainTex) * _Color;
 			half4 metalCol = tex2D(_MetalicTex, IN.uv_MainTex);
 			half4 roughCol = tex2D(_RoughnessTex, IN.uv_MainTex);
+			half4 emissionCol = tex2D(_EmissionTex, IN.uv_MainTex);
+
 			bool backface = IN.vface < 0;
 
 			float3 normalMap = UnpackNormal(tex2D(_NormalTex, IN.uv_NormalTex));
@@ -149,7 +153,7 @@
 			o.Metallic = backface ? _Metallic2 : _Metallic * metalCol.r;
 			o.Smoothness = backface ? _Glossiness2 : _Glossiness * roughCol.r;
 			o.Normal = normalMap.rgb;
-			o.Emission = (backface ? 0 : _EmissionColor) + em * _EffectorColor;
+			o.Emission = (backface ? 0 : _EmissionColor* emissionCol) + em * _EffectorColor;
 		}
 		ENDCG
 	}

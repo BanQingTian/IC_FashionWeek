@@ -95,6 +95,8 @@ ModelImporter:
     400088: wall_010_frag_004_frag_003_frag_002
     2100000: Fragment Material
     2100002: wall_mat
+    2100004: side
+    2100006: surface
     2300000: wall_F_frag_001_frag_001_frag_001
     2300002: wall_F_frag_001_frag_001_frag_002
     2300004: wall_F_frag_001_frag_002_frag_001
@@ -229,8 +231,19 @@ ModelImporter:
     4300086: wall_010_frag_002_frag_001_frag_002
     7400000: wallDebris03_bakeOK
     7400002: wallDebris03_bakeOK2
+    7400004: Take 001
     9500000: //RootNode
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: side
+    second: {fileID: 2100000, guid: c0dd1bc88d3337b4294624424fa391bc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: surface
+    second: {fileID: 2100000, guid: 22e5d7d455d23e84e9bceb19d8ecdce4, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
