@@ -334,7 +334,6 @@ func (s *Server) BroadcastMessage(ctx context.Context, msg *pb.Message) (*pb.Clo
 					s.StreamUnActiveLeave(conn.roomID, conn.id)
 					conn.error <- err
 				}
-
 			}
 		}(msg, conn)
 	}

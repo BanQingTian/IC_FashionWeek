@@ -5,19 +5,19 @@ using Zrime;
 
 public static class MsgId
 {
-    public const string __EXHIBIT_SHOW_PNG_MSG_ = "exhibit_show_png_msg";
-
     #region special id
 
     public const string __READY_PLAY_MSG_ = "ready_play_msg";
     public const string __JOIN_NEW_PLAYER_MSG_ = "join_new_player_msg";
     public const string __LEAVE_A_PLAYER_MSG_ = "leave_a_player_msg";
     public const string __PLAY_GAME_MSG_ = "play_Game_msg";
-    public const string __SHOOT_BUBBLE_MSG_ = "shoot_bubble_msg";
-    public const string __DRAGON_BEHIT_MSG_ = "dragon_behit_msg";
-    public const string __DRAGON_DEATH_MSG_ = "dragon_death_msg";
-    public const string __RESET_GAME_MSG_ = "reset_game_msg";
-    public const string __RANDOM_PLAYER_MSG_ = "random_player_msg";
+
+    public const string __BEGIN_MOVE_MSG = "begin_move_msg";
+    public const string __HOUSEOWNER_ALLOCATE_MSG_ = "houseowner_allocate_msg"; //房主统一分配模型
+    public const string __SINGLE_ALLOCATE_MSG_ = "houseowner_allocate_msg"; //
+    public const string __MOVE_MSG_ = "move_msg";
+    public const string __MUSTER_MSG_ = "muster_msg"; // 集合/奔跑
+
     public const string __TEST_MSG_ = "test_msg";
 
     #endregion
@@ -52,6 +52,16 @@ public class ZMessageManager
         client.AddListener(MsgId.__READY_PLAY_MSG_, _Response_ReadyPlay);
         client.AddListener(MsgId.__PLAY_GAME_MSG_, _Response_PlayGame);
         client.AddListener(MsgId.__JOIN_NEW_PLAYER_MSG_, _Response_JoinNewPlayer);
+        //client.AddListener(MsgId.__JOIN_NEW_PLAYER_MSG_, _Response_LeaveAPlayer); // 人物移除 移动到 ZClient
+
+        // DIY Message
+        client.AddListener(MsgId.__BEGIN_MOVE_MSG, _Response_BeginMove);
+        client.AddListener(MsgId.__HOUSEOWNER_ALLOCATE_MSG_, _Response_HouseOnwerAllocateModel);
+        client.AddListener(MsgId.__SINGLE_ALLOCATE_MSG_, _Response_SingleAllocalteModel);
+        client.AddListener(MsgId.__MOVE_MSG_, _Respose_Move);
+        client.AddListener(MsgId.__MUSTER_MSG_, _Response_Muster);
+
+
         m_Initialized = true;
     }
 
@@ -71,6 +81,11 @@ public class ZMessageManager
 
 
     #region ResponseFunc
+
+    public void _Response_BeginMove(object msg)
+    {
+        GameManager.Instance.__Func_BeginMove();
+    }
 
     public void _Response_JoinNewPlayer(object msg)
     {
@@ -95,9 +110,33 @@ public class ZMessageManager
     public void _Response_PlayGame(object msg)
     {
         Message m = msg as Message;
-        Debug.Log(m.Content);
+        Debug.Log(m.ContentType);
     }
 
+    public void _Response_HouseOnwerAllocateModel(object msg)
+    {
+        GameManager.Instance.__Func_HouseOwnerAllocateModel();
+    }
+
+    public void _Response_SingleAllocalteModel(object msg)
+    {
+        Message m = msg as Message;
+        var arrs = m.Content.Split(',');
+        GameManager.Instance.__Func_SingleAllocateModel(int.Parse(arrs[0]), arrs[1]);
+    }
+
+    public void _Respose_Move(object msg)
+    {
+        Message m = msg as Message;
+        var arrs = m.Content.Split(',');
+        GameManager.Instance.__Func_Move(arrs[0], new Vector3(float.Parse(arrs[1]), float.Parse(arrs[2]), float.Parse(arrs[3])));
+    }
+
+    public void _Response_Muster(object msg)
+    {
+        Message m = msg as Message;
+        GameManager.Instance.__Func_Muster();
+    }
 
     #endregion
 }
