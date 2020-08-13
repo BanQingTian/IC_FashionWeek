@@ -18,6 +18,15 @@ public class GameManager : MonoBehaviour
 
     }
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            ZMessageManager.Instance.SendMsg(MsgId.__HOUSEOWNER_ALLOCATE_MSG_, "");
+            ZMessageManager.Instance.SendMsg(MsgId.__BEGIN_MOVE_MSG, "");
+        }
+    }
+
     #endregion
 
     #region server response call
@@ -30,7 +39,7 @@ public class GameManager : MonoBehaviour
         {
             if (item.Value.PlayerInfo.PlayerName != "arcore") // nrlight用户每人分配一个模型
             {
-                ZMessageManager.Instance.SendMsg(MsgId.__HOUSEOWNER_ALLOCATE_MSG_, string.Format("{0},{1}", item.Key, index));
+                ZMessageManager.Instance.SendMsg(MsgId.__SINGLE_ALLOCATE_MSG_, string.Format("{0},{1}", index, item.Key));
                 index++;
             }
         }

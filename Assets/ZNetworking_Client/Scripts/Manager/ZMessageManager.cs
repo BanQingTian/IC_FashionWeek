@@ -14,7 +14,7 @@ public static class MsgId
 
     public const string __BEGIN_MOVE_MSG = "begin_move_msg";
     public const string __HOUSEOWNER_ALLOCATE_MSG_ = "houseowner_allocate_msg"; //房主统一分配模型
-    public const string __SINGLE_ALLOCATE_MSG_ = "houseowner_allocate_msg"; //
+    public const string __SINGLE_ALLOCATE_MSG_ = "single_allocate_msg"; //
     public const string __MOVE_MSG_ = "move_msg";
     public const string __MUSTER_MSG_ = "muster_msg"; // 集合/奔跑
 

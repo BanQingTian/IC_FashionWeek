@@ -35,7 +35,7 @@ public class MovementHelper : MonoBehaviour
 
     private ModelController controller;
     // 是否可以开始控制移动的接口
-    private bool MoveEnable = false;
+    public bool MoveEnable = false;
     // 是否正在移动
     private bool Moving = false;
     private NRPointerRaycaster pointerRaycaster;
@@ -53,7 +53,7 @@ public class MovementHelper : MonoBehaviour
         {
             case AnimStateEnum.Idle:
 
-                SetMoveEnable(false);
+                //SetMoveEnable(false);
 
                 break;
             case AnimStateEnum.Walk:
@@ -113,11 +113,12 @@ public class MovementHelper : MonoBehaviour
 
     private bool CheckGround()
     {
-        return result.isValid && result.worldPosition.y == GroundY;
+        return result.isValid && Mathf.Abs(result.worldPosition.y - GroundY) < 0.05;
     }
 
     float _timer = 0;
     Vector3 lastPos = Vector3.zero;
+    Vector3 lastPos_upup = Vector3.zero;
     // 移动监测
     private void MoveCheck()
     {
@@ -130,13 +131,17 @@ public class MovementHelper : MonoBehaviour
                     if (_timer > TimeSensitivity)
                     {
                         _timer = 0;
-                        lastPos = Vector3.zero;
                         //Move(result.worldPosition);
+                        if (Mathf.Abs(Vector3.Distance(lastPos_upup, result.worldPosition)) > PositionSensitivity / 2)
+                        {
+                            ZMessageManager.Instance.SendMsg(MsgId.__MOVE_MSG_, string.Format("{0},{1},{2},{3}",
+                               BelongId, result.worldPosition.x, result.worldPosition.y, result.worldPosition.z));
+                            lastPos_upup = result.worldPosition;
+                        }
+                           
 
-                        ZMessageManager.Instance.SendMsg(MsgId.__MOVE_MSG_, string.Format("{0},{1},{2},{3}",
-                            BelongId, result.worldPosition.x, result.worldPosition.y, result.worldPosition.z));
+                        lastPos = Vector3.zero;
 
-                        Debug.Log("runnn");
                     }
                     _timer += Time.deltaTime;
                 }
@@ -159,9 +164,17 @@ public class MovementHelper : MonoBehaviour
     Vector3 lastEnd = Vector3.zero;
     private void Move(Vector3 end)
     {
-        Moving = true;
         if (Vector3.Distance(end, lastEnd) > PositionSensitivity / 2)
         {
+            Moving = true;
+            if (IsWalk)
+            {
+                controller.UpdateAnim(AnimStateEnum.Walk);
+            }
+            else
+            {
+                controller.UpdateAnim(AnimStateEnum.Run);
+            }
             //StopCoroutine("MoveCor");
             //StartCoroutine(MoveCor(end));
             lastEnd = end;
@@ -191,6 +204,7 @@ public class MovementHelper : MonoBehaviour
             else
             {
                 Target.position = end;
+                controller.UpdateAnim(AnimStateEnum.Idle);
                 Moving = false;
             }
 
