@@ -34,6 +34,7 @@ public class ZPlayerMe
         if(!PlayerMap.TryGetValue(playerId, out outEn))
         {
             PlayerMap[playerId] = en;
+            PlayerKeys.Add(playerId);
         }
         else
         {
