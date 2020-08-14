@@ -1,0 +1,173 @@
+fileFormatVersion: 2
+guid: 9a2f65e0add7e5d43b1630136909fa35
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: Antenna_L1
+    100002: Antenna_L2
+    100004: Antenna_R1
+    100006: Antenna_R2
+    100008: //RootNode
+    100010: Center_Rotator_Bone
+    100012: Core_bone
+    100014: Main_Fin_L1
+    100016: Main_Fin_L2
+    100018: Main_Fin_R2
+    100020: Main_FinR1
+    100022: Pype_L1
+    100024: Pype_L2
+    100026: Pype_R1
+    100028: Pype_R2
+    100030: Small_Fin_L1
+    100032: Small_Fin_L2
+    100034: Small_Fin_R1
+    100036: SmallR2
+    100038: Spine_1
+    100040: Spine_2
+    100042: Spine_3
+    100044: Spine_4
+    100046: Spine_5
+    100048: Spine_6
+    100050: T1
+    100052: T2
+    100054: T3
+    100056: T4
+    100058: T5
+    100060: T6
+    100062: T7
+    100064: TFL2
+    100066: TFL_1
+    100068: TFR1
+    100070: TFR2
+    100072: Whale_Animated
+    400000: Antenna_L1
+    400002: Antenna_L2
+    400004: Antenna_R1
+    400006: Antenna_R2
+    400008: //RootNode
+    400010: Center_Rotator_Bone
+    400012: Core_bone
+    400014: Main_Fin_L1
+    400016: Main_Fin_L2
+    400018: Main_Fin_R2
+    400020: Main_FinR1
+    400022: Pype_L1
+    400024: Pype_L2
+    400026: Pype_R1
+    400028: Pype_R2
+    400030: Small_Fin_L1
+    400032: Small_Fin_L2
+    400034: Small_Fin_R1
+    400036: SmallR2
+    400038: Spine_1
+    400040: Spine_2
+    400042: Spine_3
+    400044: Spine_4
+    400046: Spine_5
+    400048: Spine_6
+    400050: T1
+    400052: T2
+    400054: T3
+    400056: T4
+    400058: T5
+    400060: T6
+    400062: T7
+    400064: TFL2
+    400066: TFL_1
+    400068: TFR1
+    400070: TFR2
+    400072: Whale_Animated
+    2100000: 'Material #2'
+    4300000: Whale_Animated
+    7400000: Take 001
+    7400002: 3dsMax publisher
+    9500000: //RootNode
+    13700000: Whale_Animated
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 'Material #2'
+    second: {fileID: 2100000, guid: 741f8c956614eda48bae0cb2496871a8, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

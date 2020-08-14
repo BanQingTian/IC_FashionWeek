@@ -1,0 +1,233 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: Sun_red
+  m_Shader: {fileID: 4800000, guid: da9b73df1064edc48a872613a99bb752, type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 5
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _AORGBHeightA:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _BumpMap:
+        m_Texture: {fileID: 2800000, guid: 711716276fc2ef540b0c09ff172b6381, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _ColorMap:
+        m_Texture: {fileID: 2800000, guid: 33e7b6d7c38b25c4fb9ce86c15e647d6, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _ConeFalloff:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DecalTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailMap:
+        m_Texture: {fileID: 2800000, guid: bc640b81a2dd37844a707534a711f7e5, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Diffuse:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DistMap:
+        m_Texture: {fileID: 2800000, guid: d4cc915a331796b418243679c3723394, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DistMapA:
+        m_Texture: {fileID: 2800000, guid: 96e425e16578cca4abd023ce22c30fca, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DistMapB:
+        m_Texture: {fileID: 2800000, guid: 49fcf8e9beea765489372fa757917dd5, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _FlowNormal:
+        m_Texture: {fileID: 2800000, guid: 90a8dbb5ad4e5d3488848741438ff94f, type: 3}
+        m_Scale: {x: 2, y: 2}
+        m_Offset: {x: 0, y: 0}
+    - _GradientMap:
+        m_Texture: {fileID: 2800000, guid: 20fb3fab602c05c44a31867aee0cfe1d, type: 3}
+        m_Scale: {x: 2, y: 2}
+        m_Offset: {x: 0, y: 0}
+    - _HeightMap:
+        m_Texture: {fileID: 2800000, guid: a01e51192e20ad542bf77849171a65d9, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Illum:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _LightMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MagmaDetailMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 2800000, guid: a2be98d20f648794c87dd0737946da7e, type: 3}
+        m_Scale: {x: 4, y: 2}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex1:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Nebula:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Normal:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Normals:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _ParallaxMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Reflections:
+        m_Texture: {fileID: 8900000, guid: 68a613c75a2eac2448e0d6200c4c4efa, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _RoughnessMap:
+        m_Texture: {fileID: 2800000, guid: e23d48a9c5f4e684e8c7145e17acee66, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Smoke:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SpecularIBL:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SpecularMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Starmap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SunsetMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SurfaceDetail:
+        m_Texture: {fileID: 2800000, guid: a11cef6022af73c4784a47975f1a6cf8, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SurfaceNormalMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _node_2:
+        m_Texture: {fileID: 2800000, guid: a2be98d20f648794c87dd0737946da7e, type: 3}
+        m_Scale: {x: 2, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _node_43:
+        m_Texture: {fileID: 2800000, guid: 28c7aad1372ff114b90d330f8a2dd938, type: 3}
+        m_Scale: {x: 40, y: 20}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - PixelSnap: 0
+    - _3DCoordFalloff: 2.2
+    - _3DCoordFlowTile: 64.99
+    - _3DFlowNormalPower: 0.01
+    - _3DNormalFlowSpeed: 5.45
+    - _3DPlasmaFlowSpeed: 0.31
+    - _Amount: -0.035714284
+    - _AtmoFalloff: 4.68
+    - _AtmoPower: -30
+    - _Bands: 8
+    - _BulgeScale: 0.2
+    - _BulgeShape: 5
+    - _ConeStrength: 0.55
+    - _DistTile: 1
+    - _Divisions: 0.1353384
+    - _EmissionGain: 0.14285715
+    - _EmissionLM: 0
+    - _FresnelMult: 0
+    - _FresnelPow: 0
+    - _Gloss: 0.4915418
+    - _GlowIntensity: 1.2
+    - _HeightTile: 1
+    - _IceDetail: 0
+    - _Intensity: 5
+    - _InvFade: 1
+    - _NebulaSaturation: 0
+    - _NormalHeight: 0
+    - _Offset: 0
+    - _Parallax: 0.02
+    - _Roughness: 0.01
+    - _Shininess: 0.7
+    - _SmokeScale: 0.5
+    - _Specular: 0.13197637
+    - _SpecularMult: 0
+    - _SpecularPow: 0
+    - _SpecularPower: 1
+    - _StarsPower: 0
+    - _VertexFalloff: 22.8
+    - _VertexPower: 0.005
+    - _VertexSpeed: 495.05
+    - _VertexTile: 4998.9
+    - _node_11: 185.37
+    - _node_11_copy: 1.25
+    - _node_64: 1.83
+    m_Colors:
+    - _Atmo: {r: 1, g: 0.45875567, b: 0.19853505, a: 0.54509807}
+    - _Coloqr: {r: 1, g: 1, b: 1, a: 1}
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _ColorA: {r: 1, g: 0.9558824, b: 0.9558824, a: 1}
+    - _ColorB: {r: 1, g: 0, b: 0, a: 1}
+    - _ColorFact: {r: 0.92, g: 1, b: 6.41, a: 0}
+    - _ConeColor: {r: 1, g: 1, b: 1, a: 0}
+    - _Cool: {r: 0.5073643, g: 0.073487155, b: 0, a: 0.5254902}
+    - _DetailFactors: {r: 0, g: 0, b: 0, a: 0}
+    - _DiffuseColor: {r: 0.32352942, g: 0.21172146, b: 0.21172146, a: 1}
+    - _DistFact: {r: 0.19, g: 0.03, b: 0.02, a: 0}
+    - _Emission: {r: 0, g: 0, b: 0, a: 0}
+    - _EmissionColor: {r: 0.21323532, g: 0.14895114, b: 0.14895114, a: 1}
+    - _FresnelColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+    - _GlowColor: {r: 1, g: 0.2391481, b: 0.1102941, a: 1}
+    - _Hot: {r: 1, g: 0.40392148, b: 0, a: 0.41960785}
+    - _IceFactors: {r: 0, g: 0, b: 0, a: 0}
+    - _LavaColorHigh: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+    - _LavaColorLow: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+    - _LavaColorMid: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+    - _MagmaColorA: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+    - _MagmaColorB: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+    - _MagmaFactors: {r: 0, g: 0, b: 0, a: 0}
+    - _MagmaTiling: {r: 0, g: 0, b: 0, a: 0}
+    - _NebulaTint: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+    - _SpecColor: {r: 1, g: 1, b: 1, a: 1}
+    - _SpecularColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+    - _StarsTint: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+    - _SunColorHigh: {r: 0.99999994, g: 0.82606745, b: 0.63971055, a: 0.34509805}
+    - _SunColorLow: {r: 0.5000283, g: 0, b: 0, a: 0.03529412}
+    - _SunColorMed: {r: 0.9191176, g: 0.566794, b: 0.18923011, a: 0.39215687}
+    - _SunTint: {r: 1, g: 0.81135905, b: 0.7794118, a: 0}
+    - _Tiling: {r: 3.81, g: 30.3, b: 3.56, a: 4}
+    - _TintColor: {r: 0.5, g: 0.5, b: 0.5, a: 0.5}
+    - _Warm: {r: 1, g: 0.6389319, b: 0.25000578, a: 0.3372549}

@@ -1,0 +1,123 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: Sun_Corona_red
+  m_Shader: {fileID: 4800000, guid: 1cd1376686336884683704f69d3df85c, type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 5
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: 5000
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _BumpMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _CloudsCapMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _CloudsMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _ColorMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _CoronaNoise:
+        m_Texture: {fileID: 2800000, guid: 68236edf1cee9c5468e7564db3dfd62e, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DistMapA:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DistMapB:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _GradientMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _HeightMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SunsetMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SurfaceNormalMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - _CloudsAnimation: 0
+    - _CloudsBrightness: 0
+    - _CloudsShadows: 0
+    - _CloudsSunset: 0
+    - _ColorPassTrough: 0
+    - _CoronaAmp: 2.2
+    - _CoronaBoost: 49
+    - _CoronaExp: 0.27
+    - _CoronaFalloff: 30.56
+    - _CoronaFluidInfluence: 4.98
+    - _CoronaFluidTile: 1
+    - _CoronaSpeed: 3.37
+    - _CoronaTileX: 7.09
+    - _CoronaTileY: 4.54
+    - _DesertCoverage: 0
+    - _DesertFactors: 0
+    - _DiffusePow: 0
+    - _DischargePanSpeed: 1.01
+    - _DischargeTileX: 2.84
+    - _DischargeTileY: 1.57
+    - _EdgeMaskFalloff: 0.22
+    - _EdgeMaskPower: 0.2
+    - _FresnelLandMult: 0
+    - _FresnelLandPow: 0
+    - _HeightTile: 0
+    - _InnerMaskFalloff: 53.6
+    - _InnerMaskPow: 12.7
+    - _Intensity: 0
+    - _InvFade: -0.67
+    - _MountainCoverage: 0
+    - _MountainFactors: 0
+    - _NormalHeight: 0
+    - _Shininess: 0.078125
+    - _SolarStormFalloff: 1.37
+    - _SolarStormPower: 5010.13
+    - _VegetationCoverage: 0
+    - _VertexFalloff: 0
+    - _VertexPower: 0
+    - _VertexSpeed: 0
+    - _VertexTile: 0
+    m_Colors:
+    - _CloudsColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _ColorA: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+    - _ColorB: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+    - _CoronaColor: {r: 0.5566038, g: 0.37361076, b: 0, a: 1}
+    - _DesertColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+    - _DistFact: {r: 0, g: 0, b: 0, a: 0}
+    - _LandSpecularColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+    - _MountainColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+    - _PolarTile: {r: 1, g: 1, b: 0, a: 0}
+    - _SpecColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+    - _Tiling: {r: 0, g: 0, b: 0, a: 0}
+    - _TintColor: {r: 0.24264705, g: 0.24264705, b: 0.24264705, a: 1}
