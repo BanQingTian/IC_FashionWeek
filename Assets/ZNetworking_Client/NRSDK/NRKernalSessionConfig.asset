@@ -14,7 +14,7 @@ MonoBehaviour:
   OptimizedRendering: 1
   PlaneFindingMode: 0
   ImageTrackingMode: 1
-  TrackingImageDatabase: {fileID: 11400000, guid: 8f5f733f135c1cb49b0603e63afc66b3,
+  TrackingImageDatabase: {fileID: 11400000, guid: 4d7704e38a738b541ba9e9a725ce6dff,
     type: 2}
   EnableNotification: 0
   ErrorTipsPrefab: {fileID: 114446480136121918, guid: f3bd61487bccfc34abfc952ea78923be,

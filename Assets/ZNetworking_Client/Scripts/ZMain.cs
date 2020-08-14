@@ -36,10 +36,7 @@ public class ZMain : MonoBehaviour
         {
             Time.timeScale = 1;
         }
-        if (Input.GetKeyDown(KeyCode.F))
-        {
-            ZMessageManager.Instance.SendMsg(MsgId.__DRAGON_BEHIT_MSG_, "1");
-        }
+
 #endif
 
         if (!IS_MATCH)
@@ -85,13 +82,13 @@ public class ZMain : MonoBehaviour
         // ZLocalizationHelper.Instance.Switch(LanguageType);
     }
 
-   
+
 
     // 网络所需组件，实例化网络组件
     public void LoadNetworkingModule()
     {
         ZMessageManager.Instance.Init();
-        ZMessageManager.Instance.SendConnectAndJoinRoom("192.168.43.144", "50010"); //192.168.0.33 //192.168.69.39
+        ZMessageManager.Instance.SendConnectAndJoinRoom(IPAdress, "50010"); //192.168.0.33 //192.168.69.39
     }
 
 

@@ -95,7 +95,8 @@ public class ZClient
     {
         if (MsgListener.ContainsKey(id))
         {
-            Debug.LogError("msg listener has repeated");
+
+            Debug.LogError("msg listener has repeated - " + id);
             return;
         }
         MsgListener[id] = listener;
@@ -119,9 +120,9 @@ public class ZClient
         if (m_Initialized || m_Connected)
             return;
 
-#if UNITY_EDITOR
-        ip = "127.0.0.1";
-#endif
+        //#if UNITY_EDITOR
+        //        ip = "127.0.0.1";
+        //#endif
         channel = new Channel(string.Format("{0}:{1}", ip, port), ChannelCredentials.Insecure);
         client = new Exhibit.ExhibitClient(channel);
         try
