@@ -23,19 +23,19 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 40c7a8cab5f311b49983b0bf0be1ddfa, type: 3}
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetalicTex:
-        m_Texture: {fileID: 2800000, guid: b87f51cf0f2161a44ba107c2439e46da, type: 3}
+        m_Texture: {fileID: 2800000, guid: 35ca3bd4cbbac9f449bd0e2c9fdff22e, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _NormalTex:
-        m_Texture: {fileID: 2800000, guid: 5a90581ed56973445b10e63885857af4, type: 3}
+        m_Texture: {fileID: 2800000, guid: 604b418b68336084880b0785473efe58, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _RoughnessTex:
-        m_Texture: {fileID: 2800000, guid: 8c3cc45b81b02b445af9255e2116a28a, type: 3}
+        m_Texture: {fileID: 2800000, guid: 61aeed6f2c31b27459ea979f845fdbea, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:

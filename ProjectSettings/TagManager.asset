@@ -18,11 +18,11 @@ TagManager:
   - lighting_mel3
   - lighting_fish
   - lightDirEXp
-  - 
-  - 
-  - 
-  - 
-  - 
+  - light_huan
+  - light_melStand
+  - light_melPose2
+  - light_melPose3
+  - light_bigScene_global
   - 
   - 
   - 
