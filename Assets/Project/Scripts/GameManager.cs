@@ -48,7 +48,9 @@ public class GameManager : MonoBehaviour
     // 
     public void __Func_SingleAllocateModel(int index, string playerId)
     {
-        ModelDic.Add(playerId, Models[index]);
+        Debug.Log("index : "+index);
+        if (!ModelDic.ContainsKey(playerId))
+            ModelDic.Add(playerId, Models[index]);
         Models[index].BelongID = playerId;
         Models[index].MoveHelper.BelongId = playerId;
         Models[index].Init();
@@ -79,7 +81,7 @@ public class GameManager : MonoBehaviour
     public void __Func_Jumped(string playerId)
     {
         ModelController mc;
-        if(ModelDic.TryGetValue(playerId,out mc))
+        if (ModelDic.TryGetValue(playerId, out mc))
         {
             mc.finish = true;
         }
