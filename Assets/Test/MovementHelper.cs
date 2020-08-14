@@ -138,7 +138,7 @@ public class MovementHelper : MonoBehaviour
                                BelongId, result.worldPosition.x, result.worldPosition.y, result.worldPosition.z));
                             lastPos_upup = result.worldPosition;
                         }
-                           
+
 
                         lastPos = Vector3.zero;
 
@@ -175,8 +175,6 @@ public class MovementHelper : MonoBehaviour
             {
                 controller.UpdateAnim(AnimStateEnum.Run);
             }
-            //StopCoroutine("MoveCor");
-            //StartCoroutine(MoveCor(end));
             lastEnd = end;
         }
 
@@ -208,12 +206,16 @@ public class MovementHelper : MonoBehaviour
                 Moving = false;
             }
 
-            if (Vector3.Distance(end, controller.EndTarget.position) < 0.2f)
+            if (Vector3.Distance(Target.position, controller.EndTarget.position) < 0.3f)
             {
                 Moving = false;
                 Target.forward = controller.EndTarget.forward;
                 controller.UpdateAnim(AnimStateEnum.Jump);
+                controller.finish = true;
+                //if (BelongId.Length > 2)
+                //    ZMessageManager.Instance.SendMsg(MsgId.__JUMPED_MSG_, BelongId);
                 ZMessageManager.Instance.SendMsg(MsgId.__MUSTER_MSG_, "");
+
             }
         }
     }
@@ -226,12 +228,16 @@ public class MovementHelper : MonoBehaviour
 
     void Update()
     {
-        if (MoveEnable && ZClient.Instance.PlayerID == BelongId)
+        if (ZClient.Instance.PlayerID == BelongId)
         {
-            RaycastUpdate();
-            MoveCheck();
+            if (MoveEnable)
+            {
+                RaycastUpdate();
+                MoveCheck();
+            }
         }
 
         MoveUpdate(lastEnd);
+
     }
 }

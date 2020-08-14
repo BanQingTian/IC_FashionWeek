@@ -96,5 +96,14 @@ public class ModelController : MonoBehaviour {
         MoveHelper.SetMoveEnable(false);
 
         MoveHelper.FixedPointMove(EndTarget.position);
+
+        if (!finish)
+            UpdateAnim(AnimStateEnum.Run);
+    }
+
+    public void Reset()
+    {
+        finish = false;
+        UpdateAnim(AnimStateEnum.Idle);
     }
 }

@@ -71,7 +71,17 @@ public class GameManager : MonoBehaviour
     {
         for (int i = 0; i < Models.Length; i++)
         {
+            Models[i].Init();
             Models[i].Muster();
+        }
+    }
+
+    public void __Func_Jumped(string playerId)
+    {
+        ModelController mc;
+        if(ModelDic.TryGetValue(playerId,out mc))
+        {
+            mc.finish = true;
         }
     }
 

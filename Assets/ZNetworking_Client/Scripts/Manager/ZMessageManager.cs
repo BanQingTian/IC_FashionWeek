@@ -17,6 +17,7 @@ public static class MsgId
     public const string __SINGLE_ALLOCATE_MSG_ = "single_allocate_msg"; //
     public const string __MOVE_MSG_ = "move_msg";
     public const string __MUSTER_MSG_ = "muster_msg"; // 集合/奔跑
+    public const string __JUMPED_MSG_ = "jump_msg";
 
     public const string __TEST_MSG_ = "test_msg";
 
@@ -60,6 +61,7 @@ public class ZMessageManager
         client.AddListener(MsgId.__SINGLE_ALLOCATE_MSG_, _Response_SingleAllocalteModel);
         client.AddListener(MsgId.__MOVE_MSG_, _Respose_Move);
         client.AddListener(MsgId.__MUSTER_MSG_, _Response_Muster);
+        client.AddListener(MsgId.__JOIN_NEW_PLAYER_MSG_, _Response_Jumped);
 
 
         m_Initialized = true;
@@ -134,8 +136,14 @@ public class ZMessageManager
 
     public void _Response_Muster(object msg)
     {
-        Message m = msg as Message;
+        //Message m = msg as Message;
         GameManager.Instance.__Func_Muster();
+    }
+
+    public void _Response_Jumped(object msg)
+    {
+        Message m = msg as Message;
+        GameManager.Instance.__Func_Jumped(m.Content);
     }
 
     #endregion
