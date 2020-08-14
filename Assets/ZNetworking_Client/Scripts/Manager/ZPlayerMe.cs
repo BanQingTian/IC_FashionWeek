@@ -41,12 +41,15 @@ public class ZPlayerMe
         }
     }
 
-    public void RemovePlayer(string playerId)
+    public void RemovePlayer(string id)
     {
         Entity en;
-        if(PlayerMap.TryGetValue(playerId, out en))
+        if(PlayerMap.TryGetValue(id, out en))
         {
-            PlayerMap.Remove(playerId);
+            GameObject.Destroy(PlayerMap[id].gameObject);
+            Debug.LogError("Dostroy player id : " + id);
+            PlayerMap.Remove(id);
+            PlayerKeys.Remove(id);
         }
         else
         {

@@ -61,7 +61,7 @@ public class ZMessageManager
         client.AddListener(MsgId.__SINGLE_ALLOCATE_MSG_, _Response_SingleAllocalteModel);
         client.AddListener(MsgId.__MOVE_MSG_, _Respose_Move);
         client.AddListener(MsgId.__MUSTER_MSG_, _Response_Muster);
-        client.AddListener(MsgId.__JOIN_NEW_PLAYER_MSG_, _Response_Jumped);
+        client.AddListener(MsgId.__JUMPED_MSG_, _Response_Jumped);
 
 
         m_Initialized = true;
