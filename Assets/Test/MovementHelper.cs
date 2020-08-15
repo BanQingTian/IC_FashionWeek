@@ -13,7 +13,6 @@ public class MovementHelper : MonoBehaviour
     public Transform Target;
 
 
-
     [Header("地面高度")] //用于判断是否为地面
     public float GroundY = 0;
     [Header("移动时间灵敏度")]
@@ -37,10 +36,15 @@ public class MovementHelper : MonoBehaviour
     // 是否可以开始控制移动的接口
     public bool MoveEnable = false;
     // 是否正在移动
-    private bool Moving = false;
+    public bool Moving = false;
     private NRPointerRaycaster pointerRaycaster;
     private UnityEngine.EventSystems.RaycastResult result;
 
+    public void Reset()
+    {
+        Moving = false;
+        BelongId = "";
+    }
 
     public void SetMoveEnable(bool b)
     {
@@ -179,44 +183,40 @@ public class MovementHelper : MonoBehaviour
         }
 
     }
-    private IEnumerator MoveCor(Vector3 end)
-    {
-        Vector3 dir = (end - Target.position).normalized * Time.deltaTime * 5;
-        while (Vector3.Distance(Target.position, end) > Time.deltaTime * 3 * 5)
-        {
-            Target.position += dir;
-            yield return null;
-        }
-        Target.position = end;
-    }
+   
     private void MoveUpdate(Vector3 end)
     {
         if (Moving)
         {
+            controller.Rig.isKinematic = false;
             Vector3 dir = (end - Target.position).normalized * Time.deltaTime * MoveSpeed;
             Target.forward = dir;
+
             if (Vector3.Distance(Target.position, end) > Time.deltaTime * MoveSpeed * 2)
             {
+                Target.eulerAngles = new Vector3(0, Target.eulerAngles.y, 0);
                 Target.position += dir;
             }
             else
             {
                 Target.position = end;
+                Target.eulerAngles = new Vector3(0, Target.eulerAngles.y, 0);
+                controller.Rig.isKinematic = true;
                 controller.UpdateAnim(AnimStateEnum.Idle);
                 Moving = false;
             }
 
-            if (Vector3.Distance(Target.position, controller.EndTarget.position) < 0.3f)
+            if (Target.position.x > 3 || Target.position.x < -3.25f || Target.position.z > 6.48f || Target.position.z < -0.41f)
             {
                 Moving = false;
-                Target.forward = controller.EndTarget.forward;
+                //Target.forward = controller. EndTarget.forward;
+                ZMessageManager.Instance.SendMsg(MsgId.__BLAST_WALLS_MSG, "");
+
                 controller.UpdateAnim(AnimStateEnum.Jump);
                 controller.finish = true;
-                //if (BelongId.Length > 2)
-                //    ZMessageManager.Instance.SendMsg(MsgId.__JUMPED_MSG_, BelongId);
                 ZMessageManager.Instance.SendMsg(MsgId.__MUSTER_MSG_, "");
-
             }
+
         }
     }
 
@@ -232,8 +232,12 @@ public class MovementHelper : MonoBehaviour
         {
             if (MoveEnable)
             {
-                RaycastUpdate();
-                MoveCheck();
+                if (ZClient.Instance.PlayerName != "arcore")
+                {
+                    RaycastUpdate();
+                    MoveCheck();
+                }
+
             }
         }
 

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Playables;
 
 public class GameManager : MonoBehaviour
 {
@@ -9,6 +10,12 @@ public class GameManager : MonoBehaviour
 
     public ModelController[] Models = new ModelController[3];
     public Dictionary<string, ModelController> ModelDic = new Dictionary<string, ModelController>();
+
+    private bool blastWalls = false;
+
+
+    public PlayableDirector TimeLine;
+
 
     #region Unity_Internal
 
@@ -29,7 +36,22 @@ public class GameManager : MonoBehaviour
 
     #endregion
 
+    
+
+
     #region server response call
+
+    // play timeline
+    public void __Func_PlayGame()
+    {
+        StartCoroutine(playGameCor());
+    }
+    private IEnumerator playGameCor()
+    {
+        yield return new WaitForSeconds(10);
+        ZMessageManager.Instance.SendMsg(MsgId.__HOUSEOWNER_ALLOCATE_MSG_, "");
+        ZMessageManager.Instance.SendMsg(MsgId.__BEGIN_MOVE_MSG, "");
+    }
 
     // 房主统一分配模型
     public void __Func_HouseOwnerAllocateModel()
@@ -53,6 +75,7 @@ public class GameManager : MonoBehaviour
             ModelDic.Add(playerId, Models[index]);
         Models[index].BelongID = playerId;
         Models[index].MoveHelper.BelongId = playerId;
+        Models[index].UITip.SetActive(true);
         Models[index].Init();
     }
 
@@ -84,6 +107,18 @@ public class GameManager : MonoBehaviour
         if (ModelDic.TryGetValue(playerId, out mc))
         {
             mc.finish = true;
+        }
+    }
+
+    public void __Func_BlastWalls()
+    {
+        if (!blastWalls)
+        {
+            blastWalls = true;
+            ZDebug.Log("Boom");
+
+            // todo play boom timeline
+            TimeLine.time = 2266/60;
         }
     }
 

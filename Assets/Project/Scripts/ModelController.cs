@@ -10,10 +10,15 @@ public enum AnimStateEnum
     Jump = 3,
 }
 
-public class ModelController : MonoBehaviour {
+public class ModelController : MonoBehaviour
+{
 
 
     public string BelongID { set; get; } // 所属player的id
+
+    public BoxCollider Collider;
+
+    public Rigidbody Rig;
 
     public Animator Anim; // 动画机
 
@@ -25,6 +30,8 @@ public class ModelController : MonoBehaviour {
 
     public Transform EndTarget; // 终点
 
+    public GameObject UITip;
+
     public bool finish = false;
 
     private bool m_Initialized = false;
@@ -33,7 +40,7 @@ public class ModelController : MonoBehaviour {
     {
         if (m_Initialized) return;
 
-        if(Anim == null)
+        if (Anim == null)
         {
             Anim = GetComponent<Animator>();
             if (Anim == null)
@@ -42,18 +49,27 @@ public class ModelController : MonoBehaviour {
                 return;
             }
         }
-        
-        if(MoveHelper == null)
+
+        if (Collider == null)
+        {
+            Collider = GetComponent<BoxCollider>();
+        }
+
+        if (MoveHelper == null)
         {
             MoveHelper = GetComponent<MovementHelper>();
-            if(MoveHelper == null)
+            if (MoveHelper == null)
             {
                 ZDebug.Log("MovementHelper is null");
                 return;
             }
         }
 
-        MoveHelper.InjectTarget(gameObject.transform,this);
+        MoveHelper.InjectTarget(gameObject.transform, this);
+
+        gameObject.SetActive(true);
+        gameObject.transform.position = StartTarget.position;
+        gameObject.transform.rotation = StartTarget.rotation;
 
         m_Initialized = true;
     }
@@ -63,7 +79,7 @@ public class ModelController : MonoBehaviour {
         MoveHelper.SetMoveEnable(b);
     }
 
-	public void UpdateAnim(AnimStateEnum state)
+    public void UpdateAnim(AnimStateEnum state)
     {
         CurState = state;
         MoveHelper.SetMoveState(state);
@@ -79,7 +95,8 @@ public class ModelController : MonoBehaviour {
                 Anim.Play("run");
                 break;
             case AnimStateEnum.Jump:
-                Anim.Play("jump");
+                //Anim.Play("jump");
+                Anim.SetTrigger("jump");
                 break;
             default:
                 break;
@@ -95,15 +112,35 @@ public class ModelController : MonoBehaviour {
     {
         MoveHelper.SetMoveEnable(false);
 
-        MoveHelper.FixedPointMove(EndTarget.position);
-
         if (!finish)
+        {
+            MoveHelper.FixedPointMove(EndTarget.position);
             UpdateAnim(AnimStateEnum.Run);
+        }
     }
 
     public void Reset()
     {
         finish = false;
+        UITip.SetActive(false);
         UpdateAnim(AnimStateEnum.Idle);
     }
+
+    public void JumpEnd()
+    {
+        StartCoroutine(JumpEndCor());
+    }
+    public IEnumerator JumpEndCor()
+    {
+        float t = 0;
+        while (t < 0.5f)
+        {
+            t += Time.deltaTime;
+            gameObject.transform.localPosition += -Vector3.up * Time.deltaTime * 2;
+            yield return null;
+        }
+
+        gameObject.SetActive(false);
+    }
+
 }
