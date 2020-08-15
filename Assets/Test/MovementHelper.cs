@@ -232,7 +232,7 @@ public class MovementHelper : MonoBehaviour
         {
             if (MoveEnable)
             {
-                if (ZClient.Instance.PlayerName != "arcore")
+                if (Global.DeviceType == DeviceTypeEnum.NRLight)
                 {
                     RaycastUpdate();
                     MoveCheck();
