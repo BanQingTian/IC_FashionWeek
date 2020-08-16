@@ -26,7 +26,7 @@ public class ZPlayerMe
     /// </summary>
     public Dictionary<string, Entity> PlayerMap = new Dictionary<string, Entity>();
     public List<string> PlayerKeys = new List<string>();
-    
+    public Dictionary<string, bool> PlayerReadyDic = new Dictionary<string, bool>();
 
     public void AddPlayer(string playerId, Entity en)
     {
@@ -35,11 +35,24 @@ public class ZPlayerMe
         {
             PlayerMap[playerId] = en;
             PlayerKeys.Add(playerId);
+            PlayerReadyDic.Add(playerId, false);
         }
         else
         {
             Debug.Log("eero");
         }
+    }
+
+    public bool SetPlayerReady(string playerId, string ready) // 1= True
+    {
+        PlayerReadyDic[playerId] = ready.Equals("1");
+
+        foreach (var item in PlayerReadyDic.Values)
+        {
+            if (!item)
+                return false;
+        }
+        return true;
     }
 
     public void RemovePlayer(string id)
@@ -51,6 +64,7 @@ public class ZPlayerMe
             Debug.LogError("Dostroy player id : " + id);
             PlayerMap.Remove(id);
             PlayerKeys.Remove(id);
+            PlayerReadyDic.Remove(id);
         }
         else
         {

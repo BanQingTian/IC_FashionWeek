@@ -107,7 +107,8 @@ public class ZMessageManager
         // msg.content = playerid,true
         Message m = msg as Message;
         Debug.Log(m.Content);
-
+        var arrs = m.Content.Split(',');
+        GameManager.Instance.__Func_Ready(arrs[0], arrs[1]);
     }
 
     public void _Response_PlayGame(object msg)

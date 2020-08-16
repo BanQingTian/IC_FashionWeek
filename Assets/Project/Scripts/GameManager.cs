@@ -11,11 +11,14 @@ public class GameManager : MonoBehaviour
     public ModelController[] Models = new ModelController[3];
     public Dictionary<string, ModelController> ModelDic = new Dictionary<string, ModelController>();
 
-    private bool blastWalls = false;
-
-
     public PlayableDirector TimeLine;
 
+    public bool Playing = false;
+
+
+    private bool blastWalls = false;
+
+    private ZMain m_ZMain;
 
     #region Unity_Internal
 
@@ -32,23 +35,62 @@ public class GameManager : MonoBehaviour
             ZMessageManager.Instance.SendMsg(MsgId.__HOUSEOWNER_ALLOCATE_MSG_, "");
             ZMessageManager.Instance.SendMsg(MsgId.__BEGIN_MOVE_MSG, "");
         }
+
+        if (m_ZMain.IS_MATCH && Playing == false)
+        {
+            m_ZMain.IS_MATCH = false;
+            UIManager.Instance.SetReadyBtn(true);
+        }    
     }
 
     #endregion
 
-    
+    public void Init(ZMain main)
+    {
+        m_ZMain = main;
+
+        UIManager.Instance.AddListener(BtnEnum.READY, SendReadMsg);
+        UIManager.Instance.AddListener(BtnEnum.PLAY, SendPlayMsg);
+    }
+
+    public void SendReadMsg()
+    {
+        ZMessageManager.Instance.SendMsg(MsgId.__READY_PLAY_MSG_, string.Format("{0},{1}", ZClient.Instance.PlayerID, "1"));
+    }
+    public void SendPlayMsg()
+    {
+        ZMessageManager.Instance.SendMsg(MsgId.__PLAY_GAME_MSG_,"");
+    }
 
 
     #region server response call
 
+    public void __Func_Ready(string playerId, string ready)
+    {
+        bool allready = ZPlayerMe.Instance.SetPlayerReady(playerId, ready);
+        if(allready && ZClient.Instance.IsHouseOwner)
+        {
+            UIManager.Instance.SetPlayBtn(true);
+        }
+        else
+        {
+            UIManager.Instance.SetPlayBtn(false);
+        }
+    }
+
     // play timeline
     public void __Func_PlayGame()
     {
+        Playing = true; // playing == true, can't add new player;
+
+        UIManager.Instance.SetReadyBtn(false);
+        UIManager.Instance.SetPlayBtn(false);
+
         StartCoroutine(playGameCor());
     }
     private IEnumerator playGameCor()
     {
-        yield return new WaitForSeconds(10);
+        yield return new WaitForSeconds(1);
         ZMessageManager.Instance.SendMsg(MsgId.__HOUSEOWNER_ALLOCATE_MSG_, "");
         ZMessageManager.Instance.SendMsg(MsgId.__BEGIN_MOVE_MSG, "");
     }
@@ -124,7 +166,7 @@ public class GameManager : MonoBehaviour
 
     public void __Func_Reset()
     {
-
+        Playing = false;
     }
 
     #endregion

@@ -52,6 +52,7 @@ public class ZMain : MonoBehaviour
     {
         deviceCheck();
 
+        LoadManager();
         LoadLocalization();
         LoadNetworkingModule();
     }
@@ -74,6 +75,11 @@ public class ZMain : MonoBehaviour
             var arCam = GameObject.Find("First Person Camera");
             ZClient.Instance.Model = arCam;
         }
+    }
+
+    public void LoadManager()
+    {
+        GameManager.Instance.Init(this);
     }
 
     public void LoadLocalization()

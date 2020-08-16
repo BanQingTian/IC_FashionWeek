@@ -117,7 +117,7 @@ public class MovementHelper : MonoBehaviour
 
     private bool CheckGround()
     {
-        return result.isValid && Mathf.Abs(result.worldPosition.y - GroundY) < 0.05;
+        return result.isValid && result.gameObject.CompareTag("wall");//Mathf.Abs(result.worldPosition.y - GroundY) < 0.05;
     }
 
     float _timer = 0;
