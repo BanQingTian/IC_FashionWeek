@@ -151,7 +151,7 @@
 			o.Smoothness = backface ? _Glossiness2 : _Glossiness * roughCol.r;
 			o.Normal = normalMap.rgb;
 			o.Emission = (backface ? 0 : _EmissionColor) + em * _EffectorColor;
-			o.Alpha = 0.5;
+			o.Alpha = c.a;
 		}
 		ENDCG
 	}
