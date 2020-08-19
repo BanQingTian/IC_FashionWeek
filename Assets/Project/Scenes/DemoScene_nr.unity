@@ -198,6 +198,16 @@ Prefab:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114078103923993302, guid: 5d33470940cb0dd4ea5571eeac002c28,
+        type: 2}
+      propertyPath: DeviceType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114078103923993302, guid: 5d33470940cb0dd4ea5571eeac002c28,
+        type: 2}
+      propertyPath: IPAdress
+      value: 192.168.67.155
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5d33470940cb0dd4ea5571eeac002c28, type: 2}
   m_IsPrefabAsset: 0

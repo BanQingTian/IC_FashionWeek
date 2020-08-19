@@ -23,6 +23,18 @@ public static class ZUtils
         return ret;
     }
 
+    public static string GetIPAdress(string defaultAdress)
+    {
+        string path = Application.persistentDataPath + "/IC_IPAdress.txt";
+        if (System.IO.File.Exists(path))
+        {
+            return System.IO.File.ReadAllText(path);
+        }
+        else
+        {
+            return defaultAdress;
+        }
+    }
 
     // 获取SD卡路径
     public static string GetSdcardPath()

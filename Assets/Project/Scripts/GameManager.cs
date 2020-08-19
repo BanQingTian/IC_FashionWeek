@@ -64,6 +64,19 @@ public class GameManager : MonoBehaviour
             ShowYet = true;
             UIManager.Instance.SetReadyBtn(true);
         }
+
+        if (Global.DeviceType == DeviceTypeEnum.Pad)
+        {
+            if (Input.touchCount == 3)
+            {
+                if (Input.touches[0].phase == TouchPhase.Began 
+                    && Input.touches[1].phase == TouchPhase.Began
+                    && Input.touches[2].phase == TouchPhase.Began)
+                {
+                    m_ZMain.IS_MATCH = false;
+                }
+            }
+        }
     }
 
     #endregion
@@ -167,7 +180,7 @@ public class GameManager : MonoBehaviour
         Playing = true; // playing == true, can't add new player;
 
         UIManager.Instance.SetReadyBtn(false);
-        UIManager.Instance.SetPlayBtn(false,false);
+        UIManager.Instance.SetPlayBtn(false, false);
 
         StartCoroutine(playGameCor());
     }

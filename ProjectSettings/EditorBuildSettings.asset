@@ -11,10 +11,10 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/ZNetworking_Client/NREAL/NRSDKBeta/Demos/MappingExample.unity
     guid: e75a8c0548f7c3b44a68f2662d18d5a0
-  - enabled: 1
+  - enabled: 0
     path: Assets/Project/Scenes/DemoScene_nr.unity
     guid: 6fde1923a201b084fab4341084e21935
-  - enabled: 0
+  - enabled: 1
     path: Assets/Project/Scenes/DemoScene_arcore.unity
     guid: f412faa97227fdb40a28bbaeef3a7b88
   m_configObjects: {}
