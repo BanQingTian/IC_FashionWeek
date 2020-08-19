@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4815787891788400}
   - component: {fileID: 114414212679537204}
   - component: {fileID: 114910752297332594}
+  - component: {fileID: 114076283969270072}
   m_Layer: 0
   m_Name: ZMain
   m_TagString: Untagged
@@ -128,6 +129,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &114076283969270072
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1076476482053172}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aaab7e0807e2eb545afb663aa192d88b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayerEntityPrefab: {fileID: 114221708672988880, guid: c91b605a1fbba4b4ca95d14cbfca08b5,
+    type: 2}
 --- !u!114 &114414212679537204
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -140,8 +154,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DeviceType: 1
-  LanguageType: 0
+  LanguageType: 1
   MarkerHelper: {fileID: 114910752297332594}
+  IPAdress: 192.168.50.50
   IS_MATCH: 0
 --- !u!114 &114841660326246826
 MonoBehaviour:

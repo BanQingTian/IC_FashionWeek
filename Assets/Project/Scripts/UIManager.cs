@@ -37,10 +37,21 @@ public class UIManager : MonoBehaviour
 
     public void SetReadyBtn(bool show)
     {
+        if (ZClient.Instance.IsHouseOwner)
+        {
+            ReadyBtn.GetComponent<RectTransform>().localPosition = new Vector3(101, 0, 0);
+
+        }
+        else
+        {
+            ReadyBtn.GetComponent<RectTransform>().localPosition = new Vector3(0, 0, 0);
+
+        }
         ReadyBtn.gameObject.SetActive(show);
     }
-    public void SetPlayBtn(bool show)
+    public void SetPlayBtn(bool show,bool enable)
     {
         PlayBtn.gameObject.SetActive(show);
+        PlayBtn.enabled = enable;
     }
 }

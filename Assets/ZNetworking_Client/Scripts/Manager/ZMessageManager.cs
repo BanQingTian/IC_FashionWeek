@@ -100,6 +100,8 @@ public class ZMessageManager
         pe.UpdatePoseData();
 
         ZPlayerMe.Instance.AddPlayer(player.PlayerId, pe);
+
+        UIManager.Instance.SetReadyBtn(true);
     }
 
     public void _Response_ReadyPlay(object msg)

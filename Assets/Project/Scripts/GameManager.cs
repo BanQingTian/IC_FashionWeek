@@ -25,13 +25,13 @@ public class GameManager : MonoBehaviour
     public GameObject Static_Wall;
 
     private const float displayHandTime = 2013f;
-    private const float disappearHandTime = 240;
+    private const float disappearHandTime = 30;
     private const float modelPoseReadyTime = 1622;
 
     #endregion
 
 
-
+    private bool ShowYet = false;
 
     private bool blastWalls = false;
 
@@ -54,14 +54,14 @@ public class GameManager : MonoBehaviour
         {
             Time.timeScale = 5;
         }
-        if(Input.GetKeyUp(KeyCode.R))
+        if (Input.GetKeyUp(KeyCode.R))
         {
             Time.timeScale = 1;
         }
 
-        if (m_ZMain.IS_MATCH && Playing == false)
+        if (m_ZMain.IS_MATCH && !ShowYet && Playing == false)
         {
-            m_ZMain.IS_MATCH = false;
+            ShowYet = true;
             UIManager.Instance.SetReadyBtn(true);
         }
     }
@@ -96,7 +96,7 @@ public class GameManager : MonoBehaviour
         SecondPart.gameObject.SetActive(true);
         Static_Wall.SetActive(false);
 
-        yield return new WaitForSeconds((disappearHandTime - 1) / 60);
+        yield return new WaitForSeconds((disappearHandTime) / 60);
 
         HandEffGO_L.Play("disappear");
         HandEffGO_R.Play("disappear");
@@ -148,13 +148,16 @@ public class GameManager : MonoBehaviour
     public void __Func_Ready(string playerId, string ready)
     {
         bool allready = ZPlayerMe.Instance.SetPlayerReady(playerId, ready);
+
+        UIManager.Instance.SetReadyBtn(true);
+
         if (allready && ZClient.Instance.IsHouseOwner)
         {
-            UIManager.Instance.SetPlayBtn(true);
+            UIManager.Instance.SetPlayBtn(true, true);
         }
         else
         {
-            UIManager.Instance.SetPlayBtn(false);
+            UIManager.Instance.SetPlayBtn(false, false);
         }
     }
 
@@ -164,7 +167,7 @@ public class GameManager : MonoBehaviour
         Playing = true; // playing == true, can't add new player;
 
         UIManager.Instance.SetReadyBtn(false);
-        UIManager.Instance.SetPlayBtn(false);
+        UIManager.Instance.SetPlayBtn(false,false);
 
         StartCoroutine(playGameCor());
     }

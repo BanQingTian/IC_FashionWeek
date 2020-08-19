@@ -100,7 +100,7 @@ public class ZScanMarker : MonoBehaviour
                 MarkerPrefab.SetActive(true);
                 MarkerPrefab.transform.position = item.CenterPose.position;// anchor.transform.position;
                 MarkerPrefab.transform.rotation = item.CenterPose.rotation;// anchor.transform.rotation;
-                MarkerPrefab.transform.localScale = new Vector3(0.4f, MarkerPrefab.transform.localScale.y, 0.4f);
+                MarkerPrefab.transform.localScale = new Vector3(item.ExtentX, MarkerPrefab.transform.localScale.y, item.ExtentZ);
 
                 GameObject arcore = GameObject.Find("ARCore Device");
                 arcore.transform.position = Vector3.zero;
