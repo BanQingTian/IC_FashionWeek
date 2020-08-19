@@ -297,13 +297,13 @@ Prefab:
       propertyPath: m_Name
       value: WorldRoot
       objectReference: {fileID: 0}
-    - target: {fileID: 1679113822938310, guid: e575c9a24be04094fbb0aad2ba299447, type: 2}
-      propertyPath: m_IsActive
-      value: 1
+    - target: {fileID: 4070480054709034, guid: e575c9a24be04094fbb0aad2ba299447, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 4.11
       objectReference: {fileID: 0}
-    - target: {fileID: 1436704634044586, guid: e575c9a24be04094fbb0aad2ba299447, type: 2}
-      propertyPath: m_IsActive
-      value: 0
+    - target: {fileID: 4070480054709034, guid: e575c9a24be04094fbb0aad2ba299447, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 3.09
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e575c9a24be04094fbb0aad2ba299447, type: 2}

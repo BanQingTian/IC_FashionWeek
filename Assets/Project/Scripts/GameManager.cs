@@ -22,6 +22,8 @@ public class GameManager : MonoBehaviour
     public Animator HandEffGO_L; // 手部渐变出现
     public Animator HandEffGO_R; // 手部渐变出现
 
+    public GameObject Static_Wall;
+
     private const float displayHandTime = 2013f;
     private const float disappearHandTime = 240;
     private const float modelPoseReadyTime = 1622;
@@ -73,6 +75,7 @@ public class GameManager : MonoBehaviour
     {
         FirstPart.gameObject.SetActive(true);
         MainScene.SetActive(true);
+        Static_Wall.SetActive(true);
         StartCoroutine(handEffCor());
     }
     private IEnumerator handEffCor()
@@ -91,6 +94,7 @@ public class GameManager : MonoBehaviour
     private IEnumerator secondCor()
     {
         SecondPart.gameObject.SetActive(true);
+        Static_Wall.SetActive(false);
 
         yield return new WaitForSeconds((disappearHandTime - 1) / 60);
 

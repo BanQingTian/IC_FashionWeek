@@ -121,7 +121,7 @@ public class ZClient
             return;
 
 #if UNITY_EDITOR
-        ip = "192.168.69.112";
+        ip = "127.0.0.1";
 #endif
         channel = new Channel(string.Format("{0}:{1}", ip, port), ChannelCredentials.Insecure);
         client = new Exhibit.ExhibitClient(channel);
