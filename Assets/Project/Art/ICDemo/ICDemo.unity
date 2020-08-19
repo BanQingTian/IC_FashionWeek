@@ -2868,12 +2868,12 @@ Animator:
   m_PrefabInternal: {fileID: 1533071390}
 --- !u!95 &724319582 stripped
 Animator:
-  m_CorrespondingSourceObject: {fileID: 95505436559108772, guid: 856e26f611c65e54abdeb2d18973d749,
+  m_CorrespondingSourceObject: {fileID: 95260430315782336, guid: 856e26f611c65e54abdeb2d18973d749,
     type: 2}
   m_PrefabInternal: {fileID: 1533071390}
 --- !u!1 &724319583 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 1385543511960680, guid: 856e26f611c65e54abdeb2d18973d749,
+  m_CorrespondingSourceObject: {fileID: 1693825411035956, guid: 856e26f611c65e54abdeb2d18973d749,
     type: 2}
   m_PrefabInternal: {fileID: 1533071390}
 --- !u!95 &724319584 stripped
@@ -3119,11 +3119,6 @@ GameObject:
 --- !u!95 &724319632 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 95443866504600932, guid: 856e26f611c65e54abdeb2d18973d749,
-    type: 2}
-  m_PrefabInternal: {fileID: 1533071390}
---- !u!95 &724319633 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 95072739752014364, guid: 856e26f611c65e54abdeb2d18973d749,
     type: 2}
   m_PrefabInternal: {fileID: 1533071390}
 --- !u!1 &724319634 stripped
@@ -4084,7 +4079,7 @@ PlayableDirector:
   - key: {fileID: 114686699550750068, guid: 85c9dd8ec2124e240a2533764b794e14, type: 2}
     value: {fileID: 724319634}
   - key: {fileID: 114904271414244200, guid: 85c9dd8ec2124e240a2533764b794e14, type: 2}
-    value: {fileID: 724319633}
+    value: {fileID: 0}
   - key: {fileID: 114871073400924686, guid: 85c9dd8ec2124e240a2533764b794e14, type: 2}
     value: {fileID: 0}
   - key: {fileID: 0}
@@ -4162,7 +4157,7 @@ PlayableDirector:
   - key: {fileID: 114864046885669558, guid: 85c9dd8ec2124e240a2533764b794e14, type: 2}
     value: {fileID: 724319614}
   - key: {fileID: 114264669554659318, guid: 85c9dd8ec2124e240a2533764b794e14, type: 2}
-    value: {fileID: 724319633}
+    value: {fileID: 0}
   - key: {fileID: 114236734572972030, guid: 85c9dd8ec2124e240a2533764b794e14, type: 2}
     value: {fileID: 724319613}
   - key: {fileID: 114694951241226330, guid: 85c9dd8ec2124e240a2533764b794e14, type: 2}
@@ -6176,6 +6171,26 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 320199288128102394, guid: 856e26f611c65e54abdeb2d18973d749,
+        type: 2}
+      propertyPath: m_SceneBindings.Array.data[44].value
+      value: 
+      objectReference: {fileID: 975995391}
+    - target: {fileID: 320199288128102394, guid: 856e26f611c65e54abdeb2d18973d749,
+        type: 2}
+      propertyPath: m_SceneBindings.Array.data[47].value
+      value: 
+      objectReference: {fileID: 975995393}
+    - target: {fileID: 320199288128102394, guid: 856e26f611c65e54abdeb2d18973d749,
+        type: 2}
+      propertyPath: m_SceneBindings.Array.data[162].value
+      value: 
+      objectReference: {fileID: 975995391}
+    - target: {fileID: 320199288128102394, guid: 856e26f611c65e54abdeb2d18973d749,
+        type: 2}
+      propertyPath: m_SceneBindings.Array.data[163].value
+      value: 
+      objectReference: {fileID: 975995393}
     - target: {fileID: 320609017242590186, guid: 856e26f611c65e54abdeb2d18973d749,
         type: 2}
       propertyPath: m_SceneBindings.Array.data[44].value
@@ -6256,26 +6271,6 @@ Prefab:
       propertyPath: m_SceneBindings.Array.data[175].value
       value: 
       objectReference: {fileID: 204206679}
-    - target: {fileID: 320199288128102394, guid: 856e26f611c65e54abdeb2d18973d749,
-        type: 2}
-      propertyPath: m_SceneBindings.Array.data[44].value
-      value: 
-      objectReference: {fileID: 975995391}
-    - target: {fileID: 320199288128102394, guid: 856e26f611c65e54abdeb2d18973d749,
-        type: 2}
-      propertyPath: m_SceneBindings.Array.data[47].value
-      value: 
-      objectReference: {fileID: 975995393}
-    - target: {fileID: 320199288128102394, guid: 856e26f611c65e54abdeb2d18973d749,
-        type: 2}
-      propertyPath: m_SceneBindings.Array.data[162].value
-      value: 
-      objectReference: {fileID: 975995391}
-    - target: {fileID: 320199288128102394, guid: 856e26f611c65e54abdeb2d18973d749,
-        type: 2}
-      propertyPath: m_SceneBindings.Array.data[163].value
-      value: 
-      objectReference: {fileID: 975995393}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 856e26f611c65e54abdeb2d18973d749, type: 2}
   m_IsPrefabAsset: 0
@@ -7253,7 +7248,7 @@ PlayableDirector:
   - key: {fileID: 114686699550750068, guid: 85c9dd8ec2124e240a2533764b794e14, type: 2}
     value: {fileID: 724319634}
   - key: {fileID: 114904271414244200, guid: 85c9dd8ec2124e240a2533764b794e14, type: 2}
-    value: {fileID: 724319633}
+    value: {fileID: 0}
   - key: {fileID: 114871073400924686, guid: 85c9dd8ec2124e240a2533764b794e14, type: 2}
     value: {fileID: 0}
   - key: {fileID: 0}
@@ -7331,7 +7326,7 @@ PlayableDirector:
   - key: {fileID: 114864046885669558, guid: 85c9dd8ec2124e240a2533764b794e14, type: 2}
     value: {fileID: 724319614}
   - key: {fileID: 114264669554659318, guid: 85c9dd8ec2124e240a2533764b794e14, type: 2}
-    value: {fileID: 724319633}
+    value: {fileID: 0}
   - key: {fileID: 114236734572972030, guid: 85c9dd8ec2124e240a2533764b794e14, type: 2}
     value: {fileID: 724319613}
   - key: {fileID: 114694951241226330, guid: 85c9dd8ec2124e240a2533764b794e14, type: 2}
@@ -7481,9 +7476,9 @@ PlayableDirector:
   - key: {fileID: 114686699550750068, guid: 742f64c51d8ff1b42b40c92e1b852273, type: 2}
     value: {fileID: 724319634}
   - key: {fileID: 114904271414244200, guid: 742f64c51d8ff1b42b40c92e1b852273, type: 2}
-    value: {fileID: 724319633}
+    value: {fileID: 0}
   - key: {fileID: 114264669554659318, guid: 742f64c51d8ff1b42b40c92e1b852273, type: 2}
-    value: {fileID: 724319633}
+    value: {fileID: 0}
   - key: {fileID: 0}
     value: {fileID: 0}
   - key: {fileID: 114184329364998372, guid: 742f64c51d8ff1b42b40c92e1b852273, type: 2}
@@ -7637,9 +7632,9 @@ PlayableDirector:
   - key: {fileID: 114686699550750068, guid: a248cf20786729242a25a30c5056a9ce, type: 2}
     value: {fileID: 724319634}
   - key: {fileID: 114904271414244200, guid: a248cf20786729242a25a30c5056a9ce, type: 2}
-    value: {fileID: 724319633}
+    value: {fileID: 0}
   - key: {fileID: 114264669554659318, guid: a248cf20786729242a25a30c5056a9ce, type: 2}
-    value: {fileID: 724319633}
+    value: {fileID: 0}
   - key: {fileID: 114184329364998372, guid: a248cf20786729242a25a30c5056a9ce, type: 2}
     value: {fileID: 724319632}
   - key: {fileID: 114444493521040806, guid: a248cf20786729242a25a30c5056a9ce, type: 2}
