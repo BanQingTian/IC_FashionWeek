@@ -124,6 +124,8 @@ public class ModelController : MonoBehaviour
         finish = false;
         UITip.SetActive(false);
         UpdateAnim(AnimStateEnum.Idle);
+        transform.position = StartTarget.position;
+        transform.rotation = StartTarget.rotation;
     }
 
     public void JumpEnd()
