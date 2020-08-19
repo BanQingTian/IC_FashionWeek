@@ -11,14 +11,32 @@ public class GameManager : MonoBehaviour
     public ModelController[] Models = new ModelController[3];
     public Dictionary<string, ModelController> ModelDic = new Dictionary<string, ModelController>();
 
-    public PlayableDirector TimeLine;
 
     public bool Playing = false;
+
+    #region Scene data
+
+    public GameObject MainScene;
+    public PlayableDirector FirstPart; // 第一段播放动画
+    public PlayableDirector SecondPart; // 第二段播放动画
+    public Animator HandEffGO_L; // 手部渐变出现
+    public Animator HandEffGO_R; // 手部渐变出现
+
+    private const float displayHandTime = 2013f;
+    private const float disappearHandTime = 240;
+    private const float modelPoseReadyTime = 1622;
+
+    #endregion
+
+
 
 
     private bool blastWalls = false;
 
     private ZMain m_ZMain;
+
+
+
 
     #region Unity_Internal
 
@@ -32,18 +50,74 @@ public class GameManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.R))
         {
-            ZMessageManager.Instance.SendMsg(MsgId.__HOUSEOWNER_ALLOCATE_MSG_, "");
-            ZMessageManager.Instance.SendMsg(MsgId.__BEGIN_MOVE_MSG, "");
+            Time.timeScale = 5;
+        }
+        if(Input.GetKeyUp(KeyCode.R))
+        {
+            Time.timeScale = 1;
         }
 
         if (m_ZMain.IS_MATCH && Playing == false)
         {
             m_ZMain.IS_MATCH = false;
             UIManager.Instance.SetReadyBtn(true);
-        }    
+        }
     }
 
     #endregion
+
+
+    #region Scene Part
+
+    public void ShowMainScene()
+    {
+        FirstPart.gameObject.SetActive(true);
+        MainScene.SetActive(true);
+        StartCoroutine(handEffCor());
+    }
+    private IEnumerator handEffCor()
+    {
+        yield return new WaitForSeconds((displayHandTime - 1) / 60);
+        HandEffGO_L.gameObject.SetActive(true);
+        HandEffGO_L.Play("display");
+        HandEffGO_R.gameObject.SetActive(true);
+        HandEffGO_R.Play("display");
+    }
+
+    public void ShowSecondLogic()
+    {
+        StartCoroutine(secondCor());
+    }
+    private IEnumerator secondCor()
+    {
+        SecondPart.gameObject.SetActive(true);
+
+        yield return new WaitForSeconds((disappearHandTime - 1) / 60);
+
+        HandEffGO_L.Play("disappear");
+        HandEffGO_R.Play("disappear");
+    }
+
+    public void ResetModelControllers(bool show)
+    {
+        for (int i = 0; i < Models.Length; i++)
+        {
+            Models[i].gameObject.SetActive(show);
+            Models[i].Reset();
+        }
+    }
+
+    // 重置场景的状态
+    public void ResetScenePart()
+    {
+        MainScene.SetActive(false);
+        FirstPart.gameObject.SetActive(false);
+        SecondPart.gameObject.SetActive(false);
+        ResetModelControllers(false);
+    }
+
+    #endregion
+
 
     public void Init(ZMain main)
     {
@@ -51,6 +125,8 @@ public class GameManager : MonoBehaviour
 
         UIManager.Instance.AddListener(BtnEnum.READY, SendReadMsg);
         UIManager.Instance.AddListener(BtnEnum.PLAY, SendPlayMsg);
+
+        ResetModelControllers(false);
     }
 
     public void SendReadMsg()
@@ -59,7 +135,7 @@ public class GameManager : MonoBehaviour
     }
     public void SendPlayMsg()
     {
-        ZMessageManager.Instance.SendMsg(MsgId.__PLAY_GAME_MSG_,"");
+        ZMessageManager.Instance.SendMsg(MsgId.__PLAY_GAME_MSG_, "");
     }
 
 
@@ -68,7 +144,7 @@ public class GameManager : MonoBehaviour
     public void __Func_Ready(string playerId, string ready)
     {
         bool allready = ZPlayerMe.Instance.SetPlayerReady(playerId, ready);
-        if(allready && ZClient.Instance.IsHouseOwner)
+        if (allready && ZClient.Instance.IsHouseOwner)
         {
             UIManager.Instance.SetPlayBtn(true);
         }
@@ -90,7 +166,8 @@ public class GameManager : MonoBehaviour
     }
     private IEnumerator playGameCor()
     {
-        yield return new WaitForSeconds(1);
+        ShowMainScene();
+        yield return new WaitForSeconds(modelPoseReadyTime / 60);
         ZMessageManager.Instance.SendMsg(MsgId.__HOUSEOWNER_ALLOCATE_MSG_, "");
         ZMessageManager.Instance.SendMsg(MsgId.__BEGIN_MOVE_MSG, "");
     }
@@ -112,7 +189,7 @@ public class GameManager : MonoBehaviour
     // 
     public void __Func_SingleAllocateModel(int index, string playerId)
     {
-        Debug.Log("index : "+index);
+        Debug.Log("index : " + index);
         if (!ModelDic.ContainsKey(playerId))
             ModelDic.Add(playerId, Models[index]);
         Models[index].BelongID = playerId;
@@ -126,6 +203,7 @@ public class GameManager : MonoBehaviour
         for (int i = 0; i < Models.Length; i++)
         {
             Models[i].SetMoveEnable(true);
+            Models[i].gameObject.SetActive(true);
         }
     }
 
@@ -160,7 +238,7 @@ public class GameManager : MonoBehaviour
             ZDebug.Log("Boom");
 
             // todo play boom timeline
-            TimeLine.time = 2266/60;
+            ShowSecondLogic();
         }
     }
 

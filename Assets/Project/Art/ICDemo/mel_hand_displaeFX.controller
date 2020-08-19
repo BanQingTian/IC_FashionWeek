@@ -27,7 +27,7 @@ AnimatorState:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: mel_hand_disFX
+  m_Name: disappear
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
@@ -52,7 +52,7 @@ AnimatorState:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: mel_hand_displaeFX
+  m_Name: display
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
@@ -81,10 +81,10 @@ AnimatorStateMachine:
   m_ChildStates:
   - serializedVersion: 1
     m_State: {fileID: 1102589799566925650}
-    m_Position: {x: 200, y: 0, z: 0}
+    m_Position: {x: 384, y: -48, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1102045835632936782}
-    m_Position: {x: 235, y: 65, z: 0}
+    m_Position: {x: 312, y: 132, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions: []
