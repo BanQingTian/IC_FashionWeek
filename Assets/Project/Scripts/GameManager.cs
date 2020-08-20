@@ -22,11 +22,16 @@ public class GameManager : MonoBehaviour
     public Animator HandEffGO_L; // 手部渐变出现
     public Animator HandEffGO_R; // 手部渐变出现
 
-    public GameObject Static_Wall;
-
     private const float displayHandTime = 2013f;
     private const float disappearHandTime = 30;
-    private const float modelPoseReadyTime = 1622;
+    private const float modelPoseReadyTime = 1853;
+
+    #region Scene secod hide part
+
+    public List<GameObject> HideList = new List<GameObject>();
+
+
+    #endregion
 
     #endregion
 
@@ -52,7 +57,7 @@ public class GameManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.R))
         {
-            Time.timeScale = 5;
+            Time.timeScale = 10;
         }
         if (Input.GetKeyUp(KeyCode.R))
         {
@@ -69,7 +74,7 @@ public class GameManager : MonoBehaviour
         {
             if (Input.touchCount == 3)
             {
-                if (Input.touches[0].phase == TouchPhase.Began 
+                if (Input.touches[0].phase == TouchPhase.Began
                     && Input.touches[1].phase == TouchPhase.Began
                     && Input.touches[2].phase == TouchPhase.Began)
                 {
@@ -88,7 +93,6 @@ public class GameManager : MonoBehaviour
     {
         FirstPart.gameObject.SetActive(true);
         MainScene.SetActive(true);
-        Static_Wall.SetActive(true);
         StartCoroutine(handEffCor());
     }
     private IEnumerator handEffCor()
@@ -98,6 +102,10 @@ public class GameManager : MonoBehaviour
         HandEffGO_L.Play("display");
         HandEffGO_R.gameObject.SetActive(true);
         HandEffGO_R.Play("display");
+
+        yield return new WaitForSeconds(1);
+        ZMessageManager.Instance.SendMsg(MsgId.__BEGIN_MOVE_MSG, "");
+
     }
 
     public void ShowSecondLogic()
@@ -106,13 +114,25 @@ public class GameManager : MonoBehaviour
     }
     private IEnumerator secondCor()
     {
-        SecondPart.gameObject.SetActive(true);
-        Static_Wall.SetActive(false);
-
-        yield return new WaitForSeconds((disappearHandTime) / 60);
-
         HandEffGO_L.Play("disappear");
         HandEffGO_R.Play("disappear");
+        // 等待手消失
+        yield return new WaitForSeconds(HandEffGO_L.GetCurrentAnimatorStateInfo(0).length - 0.6f);
+
+
+        SecondPart.gameObject.SetActive(true);
+
+        yield return new WaitForSeconds(0.6f);
+        HandEffGO_L.gameObject.SetActive(false);
+        HandEffGO_R.gameObject.SetActive(false);    
+
+        //yield return new WaitForSeconds((disappearHandTime) / 60);
+
+
+
+        yield return new WaitForSeconds(150);
+
+        ZMessageManager.Instance.SendMsg(MsgId.__RESET_GAME_MSG_, "");
     }
 
     public void ResetModelControllers(bool show)
@@ -127,10 +147,21 @@ public class GameManager : MonoBehaviour
     // 重置场景的状态
     public void ResetScenePart()
     {
+        if (!ZClient.Instance.IsHouseOwner)
+            return;
+        Debug.Log("reset scene");
+
+        blastWalls = false;
         MainScene.SetActive(false);
-        FirstPart.gameObject.SetActive(false);
+        FirstPart.Stop();
         SecondPart.gameObject.SetActive(false);
         ResetModelControllers(false);
+        UIManager.Instance.SetReadyBtn(true);
+
+        for (int i = 0; i < HideList.Count; i++)
+        {
+            HideList[i].SetActive(false);
+        }
     }
 
     #endregion
@@ -188,8 +219,13 @@ public class GameManager : MonoBehaviour
     {
         ShowMainScene();
         yield return new WaitForSeconds(modelPoseReadyTime / 60);
+
+        for (int i = 0; i < Models.Length; i++)
+        {
+            Models[i].gameObject.SetActive(true);
+        }
+
         ZMessageManager.Instance.SendMsg(MsgId.__HOUSEOWNER_ALLOCATE_MSG_, "");
-        ZMessageManager.Instance.SendMsg(MsgId.__BEGIN_MOVE_MSG, "");
     }
 
     // 房主统一分配模型
@@ -255,7 +291,7 @@ public class GameManager : MonoBehaviour
         if (!blastWalls)
         {
             blastWalls = true;
-            ZDebug.Log("Boom");
+            Debug.Log("Boom");
 
             // todo play boom timeline
             ShowSecondLogic();
@@ -265,6 +301,8 @@ public class GameManager : MonoBehaviour
     public void __Func_Reset()
     {
         Playing = false;
+
+        ResetScenePart();
     }
 
     #endregion

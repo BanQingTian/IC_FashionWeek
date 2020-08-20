@@ -168,7 +168,8 @@ public class MovementHelper : MonoBehaviour
     Vector3 lastEnd = Vector3.zero;
     private void Move(Vector3 end)
     {
-        if (Vector3.Distance(end, lastEnd) > PositionSensitivity / 2)
+        //Debug.Log(end + "==" + lastEnd + gameObject.name);
+        //if (Vector3.Distance(end, lastEnd) > PositionSensitivity / 2)
         {
             Moving = true;
             if (IsWalk)
@@ -183,7 +184,7 @@ public class MovementHelper : MonoBehaviour
         }
 
     }
-   
+
     private void MoveUpdate(Vector3 end)
     {
         if (Moving)
@@ -206,11 +207,11 @@ public class MovementHelper : MonoBehaviour
                 Moving = false;
             }
 
-            if (Target.position.x > 3 || Target.position.x < -3.25f || Target.position.z > 6.48f || Target.position.z < -0.41f)
+            if (Target.position.x > 3.2 || Target.position.x < -3.38f || Target.position.z > 6.62f || Target.position.z < -0.76f)
             {
                 Moving = false;
                 //Target.forward = controller. EndTarget.forward;
-                ZMessageManager.Instance.SendMsg(MsgId.__BLAST_WALLS_MSG, "");
+                ZMessageManager.Instance.SendMsg(MsgId.__BLAST_WALLS_MSG_, "");
 
                 controller.UpdateAnim(AnimStateEnum.Jump);
                 controller.finish = true;

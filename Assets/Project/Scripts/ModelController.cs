@@ -126,6 +126,7 @@ public class ModelController : MonoBehaviour
         UpdateAnim(AnimStateEnum.Idle);
         transform.position = StartTarget.position;
         transform.rotation = StartTarget.rotation;
+        gameObject.SetActive(false);
     }
 
     public void JumpEnd()

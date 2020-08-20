@@ -18,7 +18,8 @@ public static class MsgId
     public const string __MOVE_MSG_ = "move_msg";
     public const string __MUSTER_MSG_ = "muster_msg"; // 集合/奔跑
     public const string __JUMPED_MSG_ = "jump_msg";
-    public const string __BLAST_WALLS_MSG = "blast_walls_msg";
+    public const string __BLAST_WALLS_MSG_ = "blast_walls_msg";
+    public const string __RESET_GAME_MSG_ = "reset_game_msg";
 
     public const string __TEST_MSG_ = "test_msg";
 
@@ -63,7 +64,8 @@ public class ZMessageManager
         client.AddListener(MsgId.__MOVE_MSG_, _Respose_Move);
         client.AddListener(MsgId.__MUSTER_MSG_, _Response_Muster);
         client.AddListener(MsgId.__JUMPED_MSG_, _Response_Jumped);
-        client.AddListener(MsgId.__BLAST_WALLS_MSG, _Response_BlastWalls);
+        client.AddListener(MsgId.__BLAST_WALLS_MSG_, _Response_BlastWalls);
+        client.AddListener(MsgId.__RESET_GAME_MSG_, _Response_ResetGame);
 
         m_Initialized = true;
     }
@@ -150,6 +152,11 @@ public class ZMessageManager
     {
         Message m = msg as Message;
         GameManager.Instance.__Func_Jumped(m.Content);
+    }
+
+    public void _Response_ResetGame(object msg)
+    {
+        GameManager.Instance.__Func_Reset();
     }
 
     #endregion
