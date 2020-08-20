@@ -72,11 +72,10 @@ public class GameManager : MonoBehaviour
 
         if (Global.DeviceType == DeviceTypeEnum.Pad)
         {
-            if (Input.touchCount == 3)
+            if (Input.touchCount >= 2)
             {
                 if (Input.touches[0].phase == TouchPhase.Began
-                    && Input.touches[1].phase == TouchPhase.Began
-                    && Input.touches[2].phase == TouchPhase.Began)
+                    && Input.touches[1].phase == TouchPhase.Began)
                 {
                     m_ZMain.IS_MATCH = false;
                 }

@@ -38,7 +38,8 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.12731749, g: 0.13414757, b: 0.1210787, a: 1}
+  m_IndirectSpecularColor: {r: 0.0002837974, g: 0.00010216363, b: 0.0000061436886,
+    a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -549,7 +550,7 @@ Transform:
   m_Children:
   - {fileID: 1023574207}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1578239111
 GameObject:
@@ -611,7 +612,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1875541525
 GameObject:
@@ -777,7 +778,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4264203538189700, guid: e575c9a24be04094fbb0aad2ba299447, type: 2}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 114204259765478596, guid: e575c9a24be04094fbb0aad2ba299447,
         type: 2}
@@ -789,6 +790,25 @@ Prefab:
       propertyPath: PlayBtn
       value: 
       objectReference: {fileID: 575654296}
+    - target: {fileID: 1436704634044586, guid: e575c9a24be04094fbb0aad2ba299447, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 23831600809728062, guid: e575c9a24be04094fbb0aad2ba299447,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 23315149353404452, guid: e575c9a24be04094fbb0aad2ba299447,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 23950352770861094, guid: e575c9a24be04094fbb0aad2ba299447,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e575c9a24be04094fbb0aad2ba299447, type: 2}
   m_IsPrefabAsset: 0

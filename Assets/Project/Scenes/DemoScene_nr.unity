@@ -653,7 +653,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4264203538189700, guid: e575c9a24be04094fbb0aad2ba299447, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 0.09
+      value: 0.19
       objectReference: {fileID: 0}
     - target: {fileID: 4264203538189700, guid: e575c9a24be04094fbb0aad2ba299447, type: 2}
       propertyPath: m_LocalPosition.y
@@ -693,30 +693,6 @@ Prefab:
       propertyPath: PlayBtn
       value: 
       objectReference: {fileID: 923733218}
-    - target: {fileID: 4872426410358118, guid: e575c9a24be04094fbb0aad2ba299447, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 0.9882659
-      objectReference: {fileID: 0}
-    - target: {fileID: 4208064763051612, guid: e575c9a24be04094fbb0aad2ba299447, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 0.9882659
-      objectReference: {fileID: 0}
-    - target: {fileID: 4208064763051612, guid: e575c9a24be04094fbb0aad2ba299447, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: -12.31
-      objectReference: {fileID: 0}
-    - target: {fileID: 4208064763051612, guid: e575c9a24be04094fbb0aad2ba299447, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 27.36
-      objectReference: {fileID: 0}
-    - target: {fileID: 4872426410358118, guid: e575c9a24be04094fbb0aad2ba299447, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: -29.08
-      objectReference: {fileID: 0}
-    - target: {fileID: 4872426410358118, guid: e575c9a24be04094fbb0aad2ba299447, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 28.43
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e575c9a24be04094fbb0aad2ba299447, type: 2}
   m_IsPrefabAsset: 0
@@ -1483,7 +1459,7 @@ Transform:
   m_GameObject: {fileID: 1875541525}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 0.2, z: 1}
+  m_LocalScale: {x: 1, y: 0.035783783, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3

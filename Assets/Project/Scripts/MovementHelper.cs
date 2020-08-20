@@ -207,7 +207,7 @@ public class MovementHelper : MonoBehaviour
                 Moving = false;
             }
 
-            if (Target.position.x > 3.2 || Target.position.x < -3.38f || Target.position.z > 6.62f || Target.position.z < -0.76f)
+            if (Target.position.x > 3.2 || Target.position.x < -3.38f || Target.position.z > 6.3f || Target.position.z < -0.76f)
             {
                 Moving = false;
                 //Target.forward = controller. EndTarget.forward;
