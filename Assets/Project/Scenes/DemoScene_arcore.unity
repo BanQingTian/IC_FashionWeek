@@ -789,6 +789,41 @@ Prefab:
       propertyPath: PlayBtn
       value: 
       objectReference: {fileID: 575654296}
+    - target: {fileID: 1436704634044586, guid: e575c9a24be04094fbb0aad2ba299447, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 23831600809728062, guid: e575c9a24be04094fbb0aad2ba299447,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 23950352770861094, guid: e575c9a24be04094fbb0aad2ba299447,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 23315149353404452, guid: e575c9a24be04094fbb0aad2ba299447,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1591920033924078, guid: e575c9a24be04094fbb0aad2ba299447, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1840960830723846, guid: e575c9a24be04094fbb0aad2ba299447, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1304152804154530, guid: e575c9a24be04094fbb0aad2ba299447, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1350162791056614, guid: e575c9a24be04094fbb0aad2ba299447, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e575c9a24be04094fbb0aad2ba299447, type: 2}
   m_IsPrefabAsset: 0
