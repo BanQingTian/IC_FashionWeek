@@ -38,8 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.0002837974, g: 0.00010216363, b: 0.0000061436886,
-    a: 1}
+  m_IndirectSpecularColor: {r: 0.12731749, g: 0.13414757, b: 0.1210787, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -790,25 +789,6 @@ Prefab:
       propertyPath: PlayBtn
       value: 
       objectReference: {fileID: 575654296}
-    - target: {fileID: 1436704634044586, guid: e575c9a24be04094fbb0aad2ba299447, type: 2}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 23831600809728062, guid: e575c9a24be04094fbb0aad2ba299447,
-        type: 2}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 23315149353404452, guid: e575c9a24be04094fbb0aad2ba299447,
-        type: 2}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 23950352770861094, guid: e575c9a24be04094fbb0aad2ba299447,
-        type: 2}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e575c9a24be04094fbb0aad2ba299447, type: 2}
   m_IsPrefabAsset: 0

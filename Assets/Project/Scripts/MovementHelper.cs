@@ -211,7 +211,8 @@ public class MovementHelper : MonoBehaviour
             {
                 Moving = false;
                 //Target.forward = controller. EndTarget.forward;
-                ZMessageManager.Instance.SendMsg(MsgId.__BLAST_WALLS_MSG_, "");
+                if (Global.DeviceType != DeviceTypeEnum.Pad)
+                    ZMessageManager.Instance.SendMsg(MsgId.__BLAST_WALLS_MSG_, "");
 
                 controller.UpdateAnim(AnimStateEnum.Jump);
                 controller.finish = true;
