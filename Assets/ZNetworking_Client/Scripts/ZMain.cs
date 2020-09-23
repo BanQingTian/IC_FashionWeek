@@ -94,7 +94,7 @@ public class ZMain : MonoBehaviour
     public void LoadNetworkingModule()
     {
         ZMessageManager.Instance.Init();
-        ZMessageManager.Instance.SendConnectAndJoinRoom(IPAdress, "50010"); //192.168.0.33 //192.168.69.39
+        ZMessageManager.Instance.SendConnectAndJoinRoom(ZUtils.GetIPAdress(IPAdress), "50010"); //192.168.0.33 //192.168.69.39
     }
 
 
