@@ -82,6 +82,7 @@ namespace PSlicer
 
             foreach (var renderer in _linkedRenderers)
             {
+                if (renderer == null || _sheet == null) continue;
                 renderer.GetPropertyBlock(_sheet);
 
                 _sheet.SetFloat("_Density", _density);

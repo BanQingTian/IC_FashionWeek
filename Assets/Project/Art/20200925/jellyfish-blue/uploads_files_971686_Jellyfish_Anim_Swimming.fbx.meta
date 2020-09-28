@@ -1,0 +1,281 @@
+fileFormatVersion: 2
+guid: f3d4c88270d871b45979f74fd8a10943
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: Jellyfish
+    100002: Lower
+    100004: OralArm_1_1
+    100006: OralArm_1_2
+    100008: OralArm_1_3
+    100010: OralArm_1_4
+    100012: OralArm_1_5
+    100014: OralArm_2_1
+    100016: OralArm_2_2
+    100018: OralArm_2_3
+    100020: OralArm_2_4
+    100022: OralArm_2_5
+    100024: OralArm_3_1
+    100026: OralArm_3_2
+    100028: OralArm_3_3
+    100030: OralArm_3_4
+    100032: OralArm_3_5
+    100034: OralArm_4_1
+    100036: OralArm_4_2
+    100038: OralArm_4_3
+    100040: OralArm_4_4
+    100042: OralArm_4_5
+    100044: Root
+    100046: Tentacles_10_1
+    100048: Tentacles_10_2
+    100050: Tentacles_10_3
+    100052: Tentacles_10_4
+    100054: Tentacles_10_5
+    100056: Tentacles_1_1
+    100058: Tentacles_1_2
+    100060: Tentacles_1_3
+    100062: Tentacles_1_4
+    100064: Tentacles_1_5
+    100066: Tentacles_2_1
+    100068: Tentacles_2_2
+    100070: Tentacles_2_3
+    100072: Tentacles_2_4
+    100074: Tentacles_2_5
+    100076: Tentacles_3_1
+    100078: Tentacles_3_2
+    100080: Tentacles_3_3
+    100082: Tentacles_3_4
+    100084: Tentacles_3_5
+    100086: Tentacles_4_1
+    100088: Tentacles_4_2
+    100090: Tentacles_4_3
+    100092: Tentacles_4_4
+    100094: Tentacles_4_5
+    100096: Tentacles_5_1
+    100098: Tentacles_5_2
+    100100: Tentacles_5_3
+    100102: Tentacles_5_4
+    100104: Tentacles_5_5
+    100106: Tentacles_6_1
+    100108: Tentacles_6_2
+    100110: Tentacles_6_3
+    100112: Tentacles_6_4
+    100114: Tentacles_6_5
+    100116: Tentacles_7_1
+    100118: Tentacles_7_2
+    100120: Tentacles_7_3
+    100122: Tentacles_7_4
+    100124: Tentacles_7_5
+    100126: Tentacles_8_1
+    100128: Tentacles_8_2
+    100130: Tentacles_8_3
+    100132: Tentacles_8_4
+    100134: Tentacles_8_5
+    100136: Tentacles_9_1
+    100138: Tentacles_9_2
+    100140: Tentacles_9_3
+    100142: Tentacles_9_4
+    100144: Tentacles_9_5
+    100146: //RootNode
+    100148: Upper
+    400000: Jellyfish
+    400002: Lower
+    400004: OralArm_1_1
+    400006: OralArm_1_2
+    400008: OralArm_1_3
+    400010: OralArm_1_4
+    400012: OralArm_1_5
+    400014: OralArm_2_1
+    400016: OralArm_2_2
+    400018: OralArm_2_3
+    400020: OralArm_2_4
+    400022: OralArm_2_5
+    400024: OralArm_3_1
+    400026: OralArm_3_2
+    400028: OralArm_3_3
+    400030: OralArm_3_4
+    400032: OralArm_3_5
+    400034: OralArm_4_1
+    400036: OralArm_4_2
+    400038: OralArm_4_3
+    400040: OralArm_4_4
+    400042: OralArm_4_5
+    400044: Root
+    400046: Tentacles_10_1
+    400048: Tentacles_10_2
+    400050: Tentacles_10_3
+    400052: Tentacles_10_4
+    400054: Tentacles_10_5
+    400056: Tentacles_1_1
+    400058: Tentacles_1_2
+    400060: Tentacles_1_3
+    400062: Tentacles_1_4
+    400064: Tentacles_1_5
+    400066: Tentacles_2_1
+    400068: Tentacles_2_2
+    400070: Tentacles_2_3
+    400072: Tentacles_2_4
+    400074: Tentacles_2_5
+    400076: Tentacles_3_1
+    400078: Tentacles_3_2
+    400080: Tentacles_3_3
+    400082: Tentacles_3_4
+    400084: Tentacles_3_5
+    400086: Tentacles_4_1
+    400088: Tentacles_4_2
+    400090: Tentacles_4_3
+    400092: Tentacles_4_4
+    400094: Tentacles_4_5
+    400096: Tentacles_5_1
+    400098: Tentacles_5_2
+    400100: Tentacles_5_3
+    400102: Tentacles_5_4
+    400104: Tentacles_5_5
+    400106: Tentacles_6_1
+    400108: Tentacles_6_2
+    400110: Tentacles_6_3
+    400112: Tentacles_6_4
+    400114: Tentacles_6_5
+    400116: Tentacles_7_1
+    400118: Tentacles_7_2
+    400120: Tentacles_7_3
+    400122: Tentacles_7_4
+    400124: Tentacles_7_5
+    400126: Tentacles_8_1
+    400128: Tentacles_8_2
+    400130: Tentacles_8_3
+    400132: Tentacles_8_4
+    400134: Tentacles_8_5
+    400136: Tentacles_9_1
+    400138: Tentacles_9_2
+    400140: Tentacles_9_3
+    400142: Tentacles_9_4
+    400144: Tentacles_9_5
+    400146: //RootNode
+    400148: Upper
+    2100000: lambert10
+    2100002: lambert11
+    4300000: Jellyfish
+    7400000: Take 001
+    9500000: //RootNode
+    13700000: Jellyfish
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert10
+    second: {fileID: 2100000, guid: 2a79eea3241012e4db31664a9af236f6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert11
+    second: {fileID: 2100000, guid: 229e3126d45f507429dba3ebb7c1d71e, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Take 001
+      takeName: Take 001
+      firstFrame: 0
+      lastFrame: 74
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 10
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 0.254
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

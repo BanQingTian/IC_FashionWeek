@@ -12,7 +12,6 @@ public class MovementHelper : MonoBehaviour
     [HideInInspector]
     public Transform Target;
 
-
     [Header("地面高度")] //用于判断是否为地面
     public float GroundY = 0;
     [Header("移动时间灵敏度")]
@@ -207,7 +206,7 @@ public class MovementHelper : MonoBehaviour
                 Moving = false;
             }
 
-            if (Target.position.x > 3.2 || Target.position.x < -3.38f || Target.position.z > 6.3f || Target.position.z < -0.76f)
+            if (Target.position.x > 3.1 || Target.position.x < -3.1f || Target.position.z > 6.3f || Target.position.z < -0.76f)
             {
                 Moving = false;
                 //Target.forward = controller. EndTarget.forward;
