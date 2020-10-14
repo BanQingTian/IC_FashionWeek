@@ -9,8 +9,13 @@ public class JellyFishAnim : MonoBehaviour
     private Material[] mats;
     private Color defaultColor;
 
+    private void OnEnable()
+    {
+        run();
+    }
+
     // Use this for initialization
-    void Start()
+    void run()
     {
         render = this.GetComponent<Renderer>();
         Color defaultColor = render.material.color;
@@ -31,7 +36,6 @@ public class JellyFishAnim : MonoBehaviour
             {
                 a += Time.fixedDeltaTime * 0.6f;
                 mats[i].color = new Color(defaultColor.r, defaultColor.g, defaultColor.b, a);
-                Debug.Log(mats[0].color.a);
             }
             yield return null;
         }

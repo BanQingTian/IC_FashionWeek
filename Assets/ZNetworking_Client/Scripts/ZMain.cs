@@ -17,6 +17,9 @@ public class ZMain : MonoBehaviour
     [Space(12)]
     public string IPAdress = "127.0.0.1";
 
+    [Space(12)]
+    public bool UseNet = true;
+
     [HideInInspector]
     public bool IS_MATCH = false;
 
@@ -93,6 +96,12 @@ public class ZMain : MonoBehaviour
     // 网络所需组件，实例化网络组件
     public void LoadNetworkingModule()
     {
+        if (!UseNet)
+        {
+            GameManager.Instance.MainScene.SetActive(true);
+            GameManager.Instance.SecondPart.gameObject.SetActive(true);
+            return;
+        }
         ZMessageManager.Instance.Init();
         ZMessageManager.Instance.SendConnectAndJoinRoom(ZUtils.GetIPAdress(IPAdress), "50010"); //192.168.0.33 //192.168.69.39
     }

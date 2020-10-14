@@ -9,7 +9,7 @@ Material:
   m_Name: N_MaskComplex
   m_Shader: {fileID: 4800000, guid: 5a359090d59255f46b009c73ebe1f4d4, type: 3}
   m_ShaderKeywords: FUZZ_ON SPECULAR_ON _CLIPSCALING_ON _COLORGLITCHON_ON _DISPGLITCHON_ON
-    _ENABLERIMLIGHT_ON _GLITCHFXON_ON _LAYERNOISE_ON _NORMALMAP _TINTINSIDECOLOR_ON
+    _ENABLERIMLIGHT_ON _GLITCHFXON_ON _LAYERNOISE_ON _TINTINSIDECOLOR_ON
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -76,6 +76,10 @@ Material:
         m_Scale: {x: 2, y: 2}
         m_Offset: {x: 0, y: 0}
     - _FuzzTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _ImageTex:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
